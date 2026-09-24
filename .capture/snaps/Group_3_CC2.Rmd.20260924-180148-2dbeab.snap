@@ -72,12 +72,8 @@ cc1_data$ovary_area <- cc1_data$ovary_width_mm * cc1_data$ovary_height_mm
 Now document the inspection commands you used (`class()`, `dim()`, `str()`, `head()`, `tail()`) in the chunk below. Add the chunk option that **shows this code in the report but does not run it**, so that the reader can see what you checked without pages of output.
 
 ```{r inspect}
-knitr::opts_chunk$set(eval = FALSE)
-class(cc1_data)
-dim(cc1_data)
-str(cc1_data)
-head(cc1_data)
-tail(cc1_data)
+knitr::opts_chunk$set(include = FALSE)
+# class(cc1_data)
 
 ```
 

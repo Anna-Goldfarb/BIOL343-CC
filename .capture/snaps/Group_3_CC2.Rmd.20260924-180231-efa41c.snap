@@ -77,7 +77,7 @@ class(cc1_data)
 dim(cc1_data)
 str(cc1_data)
 head(cc1_data)
-tail(cc1_data)
+tail(cc)
 
 ```
 

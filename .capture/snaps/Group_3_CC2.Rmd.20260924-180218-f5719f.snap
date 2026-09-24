@@ -75,9 +75,9 @@ Now document the inspection commands you used (`class()`, `dim()`, `str()`, `hea
 knitr::opts_chunk$set(eval = FALSE)
 class(cc1_data)
 dim(cc1_data)
-str(cc1_data)
-head(cc1_data)
-tail(cc1_data)
+str()
+head()
+tail
 
 ```
 
