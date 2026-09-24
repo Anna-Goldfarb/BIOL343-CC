@@ -58,7 +58,7 @@ Variable | Description | Units
 population_type | sexual or asexual | S or A
 ovary_width | ovary width of flower | mm
 ovary_height | ovary height of flower | mm
-flower_number | count | amount of flowers
+flower_number | count | N/A
 
 # Import and clean the data
 

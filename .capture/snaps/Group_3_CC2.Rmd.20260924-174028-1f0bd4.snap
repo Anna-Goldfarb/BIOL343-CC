@@ -55,10 +55,10 @@ Write a **Markdown table** (Chapter 5, *Tables*) with three columns — variable
 ------------------------------
 Variable | Description | Units
 ---------|-------------|------
-population_type | sexual or asexual | S or A
-ovary_width | ovary width of flower | mm
-ovary_height | ovary height of flower | mm
-flower_number | count | amount of flowers
+population_type | sexual (S) or 
+ovary_width |
+ovary_height |
+flower_number |
 
 # Import and clean the data
 
