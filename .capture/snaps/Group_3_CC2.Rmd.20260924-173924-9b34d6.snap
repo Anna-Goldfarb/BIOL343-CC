@@ -57,8 +57,8 @@ Variable | Description | Units
 ---------|-------------|------
 population_type |
 ovary_width |
-ovary_height |
-flower_number |
+'ovary_height |
+'flower_number' |
 
 # Import and clean the data
 

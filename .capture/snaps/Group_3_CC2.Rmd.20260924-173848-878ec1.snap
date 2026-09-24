@@ -55,10 +55,9 @@ Write a **Markdown table** (Chapter 5, *Tables*) with three columns — variable
 ------------------------------
 Variable | Description | Units
 ---------|-------------|------
-population_type |
-ovary_width |
-ovary_height |
-flower_number |
+'population_type' |
+'ovary_width' |
+'ovary'
 
 # Import and clean the data
 
