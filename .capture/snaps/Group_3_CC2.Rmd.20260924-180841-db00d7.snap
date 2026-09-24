@@ -85,7 +85,7 @@ tail(cc1_data)
 
 Write the formula you used for ovary area as a **full-line equation** in LaTeX (Chapter 5, *Equations*), using `\times` for multiplication. Then, in a sentence of ordinary text, state its units using an **in-line equation** with a superscript.
 
-$$Area = Width \times Height$$
+$$ovary_area$$
 
 # Dynamic table
 
