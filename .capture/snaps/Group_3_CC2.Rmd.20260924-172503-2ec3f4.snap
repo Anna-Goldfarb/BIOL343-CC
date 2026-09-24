@@ -29,10 +29,9 @@ Replace the single `output: html_document` line in the YAML header above with th
 
 Write the group members as an **ordered list** (Chapter 5, *Lists*). For each member give the **name in bold**, then the student number, and then a **sub-item** containing a clickable **link** to that member's GitHub repository, written with Markdown link syntax (Chapter 5, *Links*).
 
-1. **Anna Goldfarb** — 20455917
-    + [BIOL343_CC](https://github.com/Anna-Goldfarb/BIOL343_CC)
-1. **Zaidie Daibel** -
-    + [BIOL343_CC](https://github.com/Anna-Goldfarb/BIOL343_CC)
+1. **Anna Goldfarb** — student number
+    + [BIOL343_CC](https://github.com/your_user_name/BIOL343_CC)
+1. 
 
 # Setup chunk
 
