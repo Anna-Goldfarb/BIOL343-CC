@@ -3,3 +3,6 @@
 {"chunk":null,"ts":"2026-09-24T17:53:48Z","pid":35661,"engine":"r","severity":"warning","render":false,"warning":"## Warning: cannot open file 'Users/annagoldfarb/Desktop/BIOL343/BIOL343-CC/data/A1_Data_Excel2.csv': No such file or directory"}
 {"chunk":null,"ts":"2026-09-24T17:53:48Z","pid":35661,"engine":"r","severity":"error","render":false,"text":"## Error: cannot open the connection"}
 {"chunk":null,"ts":"2026-09-25T18:24:54Z","pid":35661,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘dplyr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-09-25T18:34:49Z","pid":35661,"engine":"r","severity":"error","render":false,"text":"## Error: object 'population_type' not found"}
+{"chunk":null,"ts":"2026-09-25T18:35:08Z","pid":35661,"engine":"r","severity":"error","render":false,"text":"## Error: 'list(cc1_data$population_type)' is not a function, character or symbol"}
+{"chunk":null,"ts":"2026-09-25T18:35:46Z","pid":35661,"engine":"r","severity":"error","render":false,"text":"## Error: Syntax error: unexpected ','"}

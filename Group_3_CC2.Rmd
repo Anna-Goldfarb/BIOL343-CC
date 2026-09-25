@@ -94,7 +94,7 @@ Area units are $mm^2$
 
 ```{r area-means}
 knitr::opts_chunk$set(include = FALSE)
-area_means <- cc1_data %>% aggregate(ovary_area, list(population_type), mean)
+area_means <- cc1_data %>% aggregate(ovary_area ~ population_type, mean)
 
 ```
 
