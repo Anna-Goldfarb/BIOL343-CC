@@ -7,6 +7,7 @@ output:
         toc: true
         number_sections: true
         toc_float:
+            collapse: false
 ---
 
 # DO THIS FIRST {-}
@@ -92,13 +93,14 @@ Area units are $mm^2$
 **a.** In the chunk below, calculate the mean `ovary_area` for each `population_type` with `aggregate()` (Chapter 3, *Other Functions*) and save the result as `area_means`. This chunk should run but be **completely hidden** in the report.
 
 ```{r area-means, include=FALSE}
-area_means <- cc1_data %>% aggregate(ovary_area ~ population_type, mean)
+area_means <- aggregate(ovary_area ~ population_type, data=cc1_data, mean)
 
 ```
 
 **b.** Display `area_means` with `kable()` from the `knitr` package (Chapter 5, *Dynamic Tables*), including a `caption`. This chunk should show the **table but not the code**.
 
 ```{r area-table, echo=FALSE}
+library(knitr)
 kable(area_means, caption = "Mean Ovary Area of Population Types")
 ```
 
@@ -107,6 +109,7 @@ kable(area_means, caption = "Mean Ovary Area of Population Types")
 Make a histogram of `ovary_area` with `ggplot()` + `geom_histogram()` (Chapter 4), choosing a sensible `binwidth` and using `facet_wrap()` to give each `population_type` its own panel, `labs()` for axis labels with units and a title, and `theme_classic()` (Chapter 7). This chunk should show the **graph but not the code**, and it should not print package start-up messages (see the chunk header used under *Embed Graphs* in Chapter 5).
 
 ```{r area-histogram, echo=FALSE, message=FALSE}
+library(ggplot2)
 MyPlot <- ggplot(aes(x=ovary_area), data=cc1_data) + geom_histogram(binwidth=0.7) + labs(title="Ovary Area by Population type") + xlab("Ovary Area (mm^2)") + ylab("Population Type (A/S)") + theme_classic()
 MyPlot + facet_wrap(vars(population_type))
 ```
@@ -127,7 +130,7 @@ Your project folder is a GitHub repository (Chapter 6). Before you submit:
 1. Make sure the repository contains the `.Rmd`, `data/A1_Data_Excel.csv`, `images/` with your photo, and the knitted `.html`, and that everything is **committed and pushed**.
 1. Paste the **SHA** of your final commit (Chapter 6, *Timeline*; the 7-character code shown beside each commit on GitHub) below, formatted as in-line code with back-ticks.
 
-Final commit SHA: 
+Final commit SHA: `b6c3224`
 
 # DO THIS LAST {-}
 
