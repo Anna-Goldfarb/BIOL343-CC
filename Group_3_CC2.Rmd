@@ -93,7 +93,8 @@ Area units are $mm^2$
 **a.** In the chunk below, calculate the mean `ovary_area` for each `population_type` with `aggregate()` (Chapter 3, *Other Functions*) and save the result as `area_means`. This chunk should run but be **completely hidden** in the report.
 
 ```{r area-means}
-# area_means <- 
+knitr::opts_chunk$set(include = FALSE)
+area_means <- cc1_data %>% aggregate(ovary_area, list(population_type), mean)
 
 ```
 
