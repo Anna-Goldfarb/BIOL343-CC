@@ -2,11 +2,12 @@
 title: "BIOL343 Coding Challenge 2"
 author: "Group 3"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
-output: html_document:
-    toc: true
-    number_sections: true
-    toc_float:
-        collapse: false
+output:
+    html_document:
+        toc: true
+        number_sections: true
+        toc_float:
+            collapse: false
 ---
 
 # DO THIS FIRST {-}
@@ -129,7 +130,7 @@ Your project folder is a GitHub repository (Chapter 6). Before you submit:
 1. Make sure the repository contains the `.Rmd`, `data/A1_Data_Excel.csv`, `images/` with your photo, and the knitted `.html`, and that everything is **committed and pushed**.
 1. Paste the **SHA** of your final commit (Chapter 6, *Timeline*; the 7-character code shown beside each commit on GitHub) below, formatted as in-line code with back-ticks.
 
-Final commit SHA: `2ab5e9f`
+Final commit SHA: `1a21129`
 
 # DO THIS LAST {-}
 
