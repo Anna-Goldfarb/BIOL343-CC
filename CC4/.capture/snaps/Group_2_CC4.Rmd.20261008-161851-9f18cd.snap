@@ -73,8 +73,7 @@ summary(floral_data)
 Plot the distributions of `face_diam_mm`, with facets so that SI and SC plants are in separate panels. Choose an appropriate `binwidth` that shows the shape of the data distribution, add axis labels with units and a title, and use a 'clean' theme suitable for publication. Then do the same for `flower_number`, with `binwidth = 1`. If R prints a message about `bins = 30`, you have not set the binwidth; the chunk option `message=FALSE` (already set on these chunks) hides messages like that in the knitted file.
 
 ```{r face-histogram, message=FALSE}
-face_plot <- ggplot(aes(x=face_diam_mm), data=floral_data) + geom_histogram(binwidth=0.2) + labs() + xlab() + ylab() + theme_classic()
-num_plot <- ggplot(aes(x=flower_number), data=floral_data) + geom_histogram(binwidth=1) + theme_classic()
+ggplot(aes(x=face_diam_mm), data=floral_data) + geom_histogram()
 ```
 
 ```{r flower-histogram, message=FALSE}
