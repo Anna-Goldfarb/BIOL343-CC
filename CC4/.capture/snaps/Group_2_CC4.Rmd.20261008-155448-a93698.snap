@@ -56,10 +56,7 @@ floral_data <- read.csv("/Users/annagoldfarb/Desktop/BIOL343/BIOL343-CC/CC4/data
 Check the object with `dim()`, `head()`, `str()` and `summary()`. Look for the usual problems: columns of the wrong type, and missing values.
 
 ```{r inspect-data}
-dim(floral_data)
-head(floral_data)
-str(floral_data)
-summary(floral_data)
+dim()
 ```
 
 **Question 1:** In statistical terms, what is the **statistical population** in this study, and what is the **sample**? Give one reason the sample might not be a random, unbiased sample of that population.
