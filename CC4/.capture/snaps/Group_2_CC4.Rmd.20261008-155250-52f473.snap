@@ -47,7 +47,7 @@ Import the observations and save it as an object called `floral_data`.
 
 ```{r import-data}
 
-floral_data <- read.csv("/Users/annagoldfarb/Desktop/BIOL343/BIOL343-CC/CC4/data/AbroniaFloralData.csv")
+# floral_data <- read.csv("/Users/annagoldfarb/Desktop/BIOL343/BIOL343-CC/CC4/data/AbroniaFloralData.csv")
 
 ```
 
