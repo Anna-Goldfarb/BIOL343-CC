@@ -100,8 +100,8 @@ sd(SI$face_diam_mm)
 SC <- subset(floral_data, self_inc=="SC")
 length(SC)
 mean(SC$face_diam_mm)
-sd(SC$face_diam_mm)
-(sd(SC$face_diam_mm)/mean(SC$face_diam_mm))*100
+sd(SI$face_diam_mm)
+(sd(SI$face_diam_mm)/mean(SI$face_diam_mm))*100
 
 ```
 
