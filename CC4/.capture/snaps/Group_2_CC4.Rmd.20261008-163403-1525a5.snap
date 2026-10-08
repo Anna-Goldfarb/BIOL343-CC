@@ -83,7 +83,7 @@ ggplot(aes(x=flower_number), data=floral_data) + geom_histogram(binwidth=1) + la
 
 **Question 2:** Of the three common population distributions (Gaussian, Poisson, binomial), which one is the best model for `face_diam_mm`, and which for `flower_number`? Explain with respect to the *type* of data as well as the shape of the histogram.
 
-**Answer:** The best model of population distribution for 'face_diam_mm' is Gaussian, as it is continuous data with a relatively normal distribution shape. The best model for 'flower_number' is Poisson, as it has an integer data type because it is a count, with a normal distribution shape. 
+**Answer:** The best model of population distribution for 'face_diam_mm' is Gaussian, as it is continuous data with a relatively normal distribution. The best model for 'flower_number' is Poisson, as it has an integer data type because it is a count, with a normal distribution shape. 
 
 ## 4. Mean, standard deviation and coefficient of variation
 
