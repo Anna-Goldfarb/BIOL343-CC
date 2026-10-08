@@ -74,7 +74,7 @@ Plot the distributions of `face_diam_mm`, with facets so that SI and SC plants a
 
 ```{r face-histogram, message=FALSE}
 face_plot <- ggplot(aes(x=face_diam_mm), data=floral_data) + geom_histogram(binwidth=0.2) + labs(title="Flower Face Diameter Distribution") + xlab("Diameter (mm)") + ylab("Count of Flowers") + theme_classic()
-num_plot <- ggplot(aes(x=flower_number), data=floral_data) + geom_histogram(binwidth=1) + labs(title="Flowers in Inflorescence Distribution") + xlab("Number of Flowers") + ylab("Inflorescence Count") + theme_classic()
+num_plot <- ggplot(aes(x=flower_number), data=floral_data) + geom_histogram(binwidth=1) + labs(title="Flowers in Inflorescence") + xlab() + ylab() + theme_classic()
 ```
 
 ```{r flower-histogram, message=FALSE}
