@@ -1,3 +1,4 @@
 {"chunk":null,"ts":"2026-10-08T15:50:43Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: Syntax error: unexpected symbol"}
 {"chunk":null,"ts":"2026-10-08T16:27:32Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: could not find function \"ggplot\""}
 {"chunk":null,"ts":"2026-10-08T16:27:50Z","pid":32570,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘ggplot2’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-10-08T16:53:11Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: object 'Scenario' not found"}

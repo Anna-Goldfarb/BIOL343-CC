@@ -101,7 +101,7 @@ SC <- subset(floral_data, self_inc=="SC")
 SClength <- length(SC)
 SCmean <- mean(SC$face_diam_mm)
 SCsd <- sd(SC$face_diam_mm)
-SCcov <- (SCsd/SCmean)*100
+SCcov <- (SIsd/SImean)*100
 
 ```
 
