@@ -73,7 +73,7 @@ summary(floral_data)
 Plot the distributions of `face_diam_mm`, with facets so that SI and SC plants are in separate panels. Choose an appropriate `binwidth` that shows the shape of the data distribution, add axis labels with units and a title, and use a 'clean' theme suitable for publication. Then do the same for `flower_number`, with `binwidth = 1`. If R prints a message about `bins = 30`, you have not set the binwidth; the chunk option `message=FALSE` (already set on these chunks) hides messages like that in the knitted file.
 
 ```{r face-histogram, message=FALSE}
-library(tidyverse)
+library(ggplot2)
 ggplot(aes(x=face_diam_mm), data=floral_data) + geom_histogram(binwidth=0.2) + labs(title="Flower Face Diameter Distribution") + xlab("Diameter (mm)") + ylab("Individuals (Count)") + theme_classic()
 ```
 
@@ -114,7 +114,7 @@ sd(SC$face_diam_mm)
 Report the sample size and the mean of each of the four traits for SI and for SC plants, using `dplyr` commands. One trait has missing values, so the code must handle `NA`.
 
 ```{r trait-means}
-
+library(tidyverse)
 ```
 
 Now make a second summary with one row per site: the site's mating system, its latitude, the number of plants and the mean face diameter. Then plot mean face diameter (y) against latitude (x), one point per site, coloured by mating system, with axis labels with units, a legend title and a clean theme.
