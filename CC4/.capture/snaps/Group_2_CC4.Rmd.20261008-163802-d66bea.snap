@@ -74,11 +74,11 @@ Plot the distributions of `face_diam_mm`, with facets so that SI and SC plants a
 
 ```{r face-histogram, message=FALSE}
 library(ggplot2)
-ggplot(aes(x=face_diam_mm), data=floral_data) + geom_histogram(binwidth=0.2) + labs(title="Flower Face Diameter Distribution") + xlab("Diameter (mm)") + ylab("Individuals (Count)") + theme_classic()
+ggplot(aes(x=face_diam_mm), data=floral_data) + geom_histogram(binwidth=0.2) + labs(title="Flower Face Diameter Distribution") + xlab("Diameter (mm)") + ylab("Individuals ()") + theme_classic()
 ```
 
 ```{r flower-histogram, message=FALSE}
-ggplot(aes(x=flower_number), data=floral_data) + geom_histogram(binwidth=1) + labs(title="Flowers in Inflorescence Distribution") + xlab("Number of Flowers in Inflorescence") + ylab("Individuals (Count)") + theme_classic()
+ggplot(aes(x=flower_number), data=floral_data) + geom_histogram(binwidth=1) + labs(title="Flowers in Inflorescence Distribution") + xlab("Number of Flowers") + ylab("Inflorescence Count") + theme_classic()
 ```
 
 **Question 2:** Of the three common population distributions (Gaussian, Poisson, binomial), which one is the best model for `face_diam_mm`, and which for `flower_number`? Explain with respect to the *type* of data as well as the shape of the histogram.
