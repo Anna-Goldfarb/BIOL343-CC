@@ -115,16 +115,18 @@ Report the sample size and the mean of each of the four traits for SI and for SC
 
 ```{r trait-means}
 # SI
-summarize(SI, n= sum(!is.na(umbel_angle_deg)), Mean= mean(umbel_angle_deg, na.rm=TRUE))
-summarize(SI, n= sum(!is.na(flower_number)), Mean= mean(flower_number, na.rm=TRUE))
-summarize(SI, n= sum(!is.na(face_diam_mm)), Mean= mean(face_diam_mm, na.rm=TRUE))
-summarize(SI, n= sum(!is.na(tube_length_mm)), Mean= mean(tube_length_mm, na.rm=TRUE))
+# sum(SI$umbel_angle_deg, na.rm=TRUE)
+summarize(SI, Mean = , )
+mean(SI$umbel_angle_deg, na.rm=TRUE)
+mean(SI$flower_number, na.rm=TRUE)
+mean(SI$face_diam_mm, na.rm=TRUE)
+mean(SI$tube_length_mm, na.rm=TRUE)
 
 # SC
-summarize(SC, n= sum(!is.na(umbel_angle_deg)), Mean= mean(umbel_angle_deg, na.rm=TRUE))
-summarize(SC, n= sum(!is.na(flower_number)), Mean= mean(flower_number, na.rm=TRUE))
-summarize(SC, n= sum(!is.na(face_diam_mm)), Mean= mean(face_diam_mm, na.rm=TRUE))
-summarize(SC, n= sum(!is.na(tube_length_mm)), Mean= mean(tube_length_mm, na.rm=TRUE))
+mean(SI$umbel_angle_deg, na.rm=TRUE)
+mean(SI$flower_number, na.rm=TRUE)
+mean(SI$face_diam_mm, na.rm=TRUE)
+mean(SI$tube_length_mm, na.rm=TRUE)
 ```
 
 Now make a second summary with one row per site: the site's mating system, its latitude, the number of plants and the mean face diameter. Then plot mean face diameter (y) against latitude (x), one point per site, coloured by mating system, with axis labels with units, a legend title and a clean theme.

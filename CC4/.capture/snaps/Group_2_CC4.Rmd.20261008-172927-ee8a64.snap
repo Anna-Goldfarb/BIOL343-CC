@@ -115,6 +115,7 @@ Report the sample size and the mean of each of the four traits for SI and for SC
 
 ```{r trait-means}
 # SI
+## Angle in degrees
 summarize(SI, n= sum(!is.na(umbel_angle_deg)), Mean= mean(umbel_angle_deg, na.rm=TRUE))
 summarize(SI, n= sum(!is.na(flower_number)), Mean= mean(flower_number, na.rm=TRUE))
 summarize(SI, n= sum(!is.na(face_diam_mm)), Mean= mean(face_diam_mm, na.rm=TRUE))

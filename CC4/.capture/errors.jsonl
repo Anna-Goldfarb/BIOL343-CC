@@ -8,3 +8,7 @@
 {"chunk":null,"ts":"2026-10-08T17:16:19Z","pid":32570,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘purrr’ was built under R version 4.5.2"}
 {"chunk":null,"ts":"2026-10-08T17:16:19Z","pid":32570,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘dplyr’ was built under R version 4.5.2"}
 {"chunk":null,"ts":"2026-10-08T17:16:19Z","pid":32570,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘lubridate’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-10-08T17:19:36Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: no applicable method for 'summarise' applied to an object of class \"c('integer', 'numeric')\""}
+{"chunk":null,"ts":"2026-10-08T17:19:52Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: unused argument (na.rm = TRUE)"}
+{"chunk":null,"ts":"2026-10-08T17:24:12Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: \u001b[1m\u001b[22m\u001b[36mℹ\u001b[39m In argument: `n = !is.na(umbel_angle_deg)`.\n\u001b[1mCaused by error:\u001b[22m\n\u001b[1m\u001b[22m\u001b[33m!\u001b[39m `n` must be size 1, not 866.\n\u001b[36mℹ\u001b[39m To return more or less than 1 row per group, use `reframe()`."}
+{"chunk":null,"ts":"2026-10-08T17:26:34Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: Syntax error: unexpected '='"}
