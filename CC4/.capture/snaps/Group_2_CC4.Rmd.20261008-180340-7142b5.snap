@@ -130,7 +130,7 @@ summarize(SC, SC_Tube_n= sum(!is.na(tube_length_mm)), SC_Tube_Mean= mean(tube_le
 Now make a second summary with one row per site: the site's mating system, its latitude, the number of plants and the mean face diameter. Then plot mean face diameter (y) against latitude (x), one point per site, coloured by mating system, with axis labels with units, a legend title and a clean theme.
 
 ```{r site-means}
-Group <- floral_data %>% group_by(site, self_inc, latitude_N) %>% summarise(n_plants= n(), mean_diam = mean(face_diam_mm, na.rm = TRUE))
+Group <- group_by(floral_data, site, self_inc, latitude_N) %>% summarise(Group, n_plants=n(site), mean_diam=mean(face_diam_mm, na.rm = TRUE))
 ```
 
 ```{r face-vs-latitude}
