@@ -134,7 +134,7 @@ floral_data %>% group_by(site, self_inc, latitude_N) %>% summarise(n_plants= n()
 ```
 
 ```{r face-vs-latitude}
-ggplot(aes(x=latitude_N, y=face_diam_mm),data=floral_data) + geom_point(aes(colour=self_inc)) + labs(title="Latitude Versus Diameter By Site") + xlab("Latitude (degrees North)") + ylab("Flower Face Diameter (mm)") + theme_classic()
+ggplot(aes(x=latitude_N, y=face_diam_mm),data=floral_data) + geom_point(aes(colour=self_inc)) + labs(title="Latitude Versus Diameter By Site") + xlab() + theme_classic()
 ```
 
 **Question 4:** Do the four traits differ between SI and SC plants in the direction predicted by the second hypothesis in the instructions? Which trait shows the largest relative difference?
