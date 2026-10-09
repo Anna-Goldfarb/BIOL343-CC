@@ -205,9 +205,8 @@ Convert `SI` to z-scores and plot a histogram of them. Then convert the **mean o
 
 ```{r z-scores, message=FALSE}
 zSI_diam <- (SI$face_diam_mm-mean(SI$face_diam_mm))/sd(SI$face_diam_mm)
-ggplot() + geom_histogram(aes(x=zSI_diam))
-zSC_diam <- (mean(SI$face_diam_mm)-mean(SI$face_diam_mm))/sd(SI$face_diam_mm)
-pnorm(q=zSC_diam, mean=mean(SI$face_diam_mm) , sd=sd(SI$face_diam_mm) , lower.tail=TRUE)
+ggplot(aes(x=zSI_diam), data=) + geom_histogram()
+pnorm()
 ```
 
 **Question 7:** Is this a one-tailed or a two-tailed question, and why? What does the probability say about whether SC flowers are simply small SI flowers?
