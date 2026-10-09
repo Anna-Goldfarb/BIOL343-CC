@@ -195,7 +195,7 @@ sample(SI, 500)
 
 **Question 6:** As the sub-sample grows, which of the three numbers stays roughly where it is and which one shrinks? Explain why (hint: How does this relate to the standard error?)
 
-**Answer:** The mean and standard deviation stay roughly the same
+**Answer:**
 
 # Part 4 — Probability and tests
 
@@ -236,7 +236,7 @@ ggplot(aes(x=face_diam_mm , y=tube_length_mm), data=floral_data) + geom_point(ae
 
 **Question 9:** Using everything above — the site plot in Section 5, the trait means, the *t*-test and this figure — what do the data say about the two hypotheses in the instructions? Answer in a short paragraph.
 
-**Answer:** The data supports both hypotheses. The first hypothesis is evidenced in the chart of latitude versus flower face diameter and coloured by mating system. Samples from higher latitude sites had SC mating systems and lower face diameter values, showing that they do not atract pollinators at these high latitudes since pollinator service is low. The second hypothesis is evidenced in the figure above, as the SC populations are shown to have a reduced floral face diameter and tube length compared to the SI populations. These are both traits that attract pollinators, which recieve less investment from the SC populations because they can self-pollinate.
+**Answer:** The data supports both hypotheses. The first hypothesis is evidenced in the chart of latitude versus flower face diameter and coloured by mating system. Samples from higher latitude sites had SC mating systems and lower face diameter values, showing that they do not atract pollinators at these high latitudes since pollinator service is low. The second hypothesis is evidenced in the figure above, as the SC populations are shown to have a reduced floral 
 
 # DO THIS LAST {-}
 
