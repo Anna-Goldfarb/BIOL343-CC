@@ -155,7 +155,7 @@ SI_CI_flowerNum <- c(mean(SI$flower_number)-1.96*SI_SE_flowerNum, mean(SI$flower
 SI_SE_diam <- sd(SI$face_diam_mm)/sqrt(nrow(SI))
 SI_CI_diam <- c(mean(SI$face_diam_mm)-1.96*SI_SE_diam, mean(SI$face_diam_mm)+1.96*SI_SE_diam)
 
-SI_SE_tube <- sd(SI$tube_length_mm)/sqrt(nrow(SI))
+SI_SE_tube <- sd(SI$flower_number)/sqrt(nrow(SI))
 SI_CI_tube <- c(mean(SI$tube_length_mm)-1.96*SI_SE_tube, mean(SI$tube_length_mm)+1.96*SI_SE_tube)
 
 SI_SE_angle <- sd(SI$umbel_angle_deg)/sqrt(nrow(SI))
@@ -168,7 +168,7 @@ SC_CI_flowerNum <- c(mean(SC$flower_number)-1.96*SC_SE_flowerNum, mean(SC$flower
 SC_SE_diam <- sd(SC$face_diam_mm)/sqrt(nrow(SC))
 SC_CI_diam <- c(mean(SC$face_diam_mm)-1.96*SC_SE_diam, mean(SC$face_diam_mm)+1.96*SC_SE_diam)
 
-SC_SE_tube <- sd(SC$tube_length_mm)/sqrt(nrow(SC))
+SC_SE_tube <- sd(SC$flower_number)/sqrt(nrow(SC))
 SC_CI_tube <- c(mean(SC$tube_length_mm)-1.96*SC_SE_tube, mean(SC$tube_length_mm)+1.96*SC_SE_tube)
 
 SC_SE_angle <- sd(SC$umbel_angle_deg)/sqrt(nrow(SC))
@@ -180,7 +180,7 @@ paste(SC_CI_flowerNum, SC_CI_diam, SC_CI_tube, SC_CI_angle)
 
 **Question 5:** What does each confidence interval represent? Do the two intervals overlap, and what does that suggest about the two populations?
 
-**Answer:** The confidence intervals represents the range of mean values (e.g. for face diameter) in a each population (SI and SC). They don't overlap between the two populations, indicating the means are very different.
+**Answer:** The confidence intervals represents the range of mean values for face diameter in a po. They don't overlap between, indicating the mean face diameters are different.
 
 ## 7. The central limit theorem
 

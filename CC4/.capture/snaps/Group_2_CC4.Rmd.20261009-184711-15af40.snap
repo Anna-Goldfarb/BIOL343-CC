@@ -180,7 +180,7 @@ paste(SC_CI_flowerNum, SC_CI_diam, SC_CI_tube, SC_CI_angle)
 
 **Question 5:** What does each confidence interval represent? Do the two intervals overlap, and what does that suggest about the two populations?
 
-**Answer:** The confidence intervals represents the range of mean values (e.g. for face diameter) in a each population (SI and SC). They don't overlap between the two populations, indicating the means are very different.
+**Answer:** The confidence intervals represents the range of mean values for face diameter in a each population (SI and SC). They don't overlap between the two populations, indicating the mean face diameters are very different.
 
 ## 7. The central limit theorem
 
