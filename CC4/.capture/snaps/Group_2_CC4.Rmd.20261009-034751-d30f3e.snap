@@ -202,7 +202,7 @@ Test whether SI and SC plants differ in face diameter with a t-test. Report *t*,
 
 **Question 8:** Every statistical test has assumptions. Name two assumptions of the *t*-test and say, in one sentence each, whether you think the *Abronia* data meet them.
 
-**Answer:** A t-test assumes independent observation, which is _ in this dataset. A t-test also assumes continuous data, which is met in this dataset.
+**Answer:** A t-test assumes independent observation and continuous data. The dataset meets the
 
 ## 10. Face diameter against tube length
 
