@@ -226,6 +226,7 @@ test$p.value
 test$conf.int 
 t_manual <- (mean(SI$face_diam_mm) - mean(SC$face_diam_mm)) /
   sqrt(SI_SE_diam^2 + SI_SE_diam^2)
+
 ```
 
 **Question 8:** Every statistical test has assumptions. Name two assumptions of the *t*-test and say, in one sentence each, whether you think the *Abronia* data meet them.

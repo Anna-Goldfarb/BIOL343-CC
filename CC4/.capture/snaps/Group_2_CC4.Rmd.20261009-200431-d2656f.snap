@@ -220,12 +220,13 @@ Test whether SI and SC plants differ in face diameter with a t-test. Report *t*,
 
 ```{r t-test}
 test <- t.test(SI$face_diam_mm, SC$face_diam_mm)
-test$statistic
-test$parameter
-test$p.value
-test$conf.int 
 t_manual <- (mean(SI$face_diam_mm) - mean(SC$face_diam_mm)) /
   sqrt(SI_SE_diam^2 + SI_SE_diam^2)
+test$statistic  # t-statistic
+test$parameter  # degrees of freedom
+test$p.value    # p-value
+test$conf.int 
+test$estimate   # means of SI and SC
 ```
 
 **Question 8:** Every statistical test has assumptions. Name two assumptions of the *t*-test and say, in one sentence each, whether you think the *Abronia* data meet them.
