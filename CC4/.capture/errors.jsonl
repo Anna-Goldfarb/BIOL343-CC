@@ -19,3 +19,4 @@
 {"chunk":null,"ts":"2026-10-09T03:37:33Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: cannot take a sample larger than the population when 'replace = FALSE'"}
 {"chunk":null,"ts":"2026-10-09T03:37:50Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: cannot take a sample larger than the population when 'replace = FALSE'"}
 {"chunk":null,"ts":"2026-10-09T03:38:13Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: invalid first argument"}
+{"chunk":null,"ts":"2026-10-09T03:45:01Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: non-numeric argument to binary operator"}

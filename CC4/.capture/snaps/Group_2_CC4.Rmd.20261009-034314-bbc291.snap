@@ -209,7 +209,7 @@ Test whether SI and SC plants differ in face diameter with a t-test. Report *t*,
 Plot `tube_length_mm` (y) against `face_diam_mm` (x), coloured by `self_inc`, with axis labels with units, a legend title, and a clean theme. Give the figure a caption with the chunk option `fig.cap = "..."`, and hide the code with `echo = FALSE` so that only the figure and its caption appear in the knitted document.
 
 ```{r face-vs-tube, echo=FALSE, fig.cap="Flower face diameter versus tube length, coloured by mating system."}
-ggplot(aes(x=face_diam_mm , y=tube_length_mm), data=floral_data) + geom_point(aes(colour=self_inc)) + xlab("Flower Face Diameter (mm)") + ylab("Flower Tube Length (mm)") + theme_classic()
+ggplot(aes(x= , y=), data-floral_data) + geom_point(aes(colour)) + xlab("") + ylab("") + theme_classic()
 ```
 
 **Question 9:** Using everything above — the site plot in Section 5, the trait means, the *t*-test and this figure — what do the data say about the two hypotheses in the instructions? Answer in a short paragraph.

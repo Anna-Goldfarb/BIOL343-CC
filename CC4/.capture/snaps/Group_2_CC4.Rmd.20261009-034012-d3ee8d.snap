@@ -134,7 +134,7 @@ floral_data %>% group_by(site, self_inc, latitude_N) %>% summarise(n_plants= n()
 ```
 
 ```{r face-vs-latitude}
-ggplot(aes(x=latitude_N, y=face_diam_mm),data=floral_data) + geom_point(aes(colour=self_inc)) + labs(title="Latitude Versus Diameter By Site") + xlab("Latitude (degrees North)") + ylab("Flower Face Diameter (mm)") + scale_colour_discrete(name = "Mating system") + theme_classic()
+ggplot(aes(x=latitude_N, y=mean(face_diam_mm)),data=floral_data) + geom_point(aes(colour=self_inc)) + labs(title="Latitude Versus Diameter By Site") + xlab("Latitude (degrees North)") + ylab("Flower Face Diameter (mm)") + scale_colour_discrete(name = "Mating system") + theme_classic()
 ```
 
 **Question 4:** Do the four traits differ between SI and SC plants in the direction predicted by the second hypothesis in the instructions? Which trait shows the largest relative difference?
@@ -208,8 +208,8 @@ Test whether SI and SC plants differ in face diameter with a t-test. Report *t*,
 
 Plot `tube_length_mm` (y) against `face_diam_mm` (x), coloured by `self_inc`, with axis labels with units, a legend title, and a clean theme. Give the figure a caption with the chunk option `fig.cap = "..."`, and hide the code with `echo = FALSE` so that only the figure and its caption appear in the knitted document.
 
-```{r face-vs-tube, echo=FALSE, fig.cap="Flower face diameter versus tube length, coloured by mating system."}
-ggplot(aes(x=face_diam_mm , y=tube_length_mm), data=floral_data) + geom_point(aes(colour=self_inc)) + xlab("Flower Face Diameter (mm)") + ylab("Flower Tube Length (mm)") + theme_classic()
+```{r face-vs-tube, echo=FALSE, fig.cap="Write your caption here."}
+ggplot() + geom_point() + xlab + theme_classic()
 ```
 
 **Question 9:** Using everything above — the site plot in Section 5, the trait means, the *t*-test and this figure — what do the data say about the two hypotheses in the instructions? Answer in a short paragraph.
