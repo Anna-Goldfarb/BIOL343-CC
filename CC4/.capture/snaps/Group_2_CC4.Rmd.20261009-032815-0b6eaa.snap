@@ -150,11 +150,11 @@ For `SI` and for `SC`, calculate the standard error of the mean and the 95% conf
 ```{r se-ci}
 # SI
 SI_SE <- sd/sqrt(n)
-SI_CI <- c(x-1.96*se, x+1.96*se)
+SI_CI <-
 
 # SC
-SC_SE <- sd/sqrt(n)
-SC_CI <- c(x-1.96*se, x+1.96*se)
+SC_SE <-
+SC_CI <-
 
 print(SI_CI, SC_CI)
 ```

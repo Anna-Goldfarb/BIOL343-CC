@@ -154,7 +154,7 @@ SI_CI <- c(x-1.96*se, x+1.96*se)
 
 # SC
 SC_SE <- sd/sqrt(n)
-SC_CI <- c(x-1.96*se, x+1.96*se)
+SC_CI <-
 
 print(SI_CI, SC_CI)
 ```
