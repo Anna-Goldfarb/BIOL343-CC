@@ -175,7 +175,7 @@ SC_SE_angle <- sd(SC$umbel_angle_deg)/sqrt(nrow(SC))
 SC_CI_angle <- c(mean(SC$umbel_angle_deg)-1.96*SC_SE_angle, mean(SC$umbel_angle_deg)+1.96*SC_SE_angle)
 
 paste(SI_CI_flowerNum, SI_CI_diam, SI_CI_tube, SI_CI_angle)
-paste(SC_CI_flowerNum, SC_CI_diam, SC_CI_tube, SC_CI_angle)
+print(SC_CI_flowerNum, SC_CI_diam, SC_CI_tube, SC_CI_angle)
 ```
 
 **Question 5:** What does each confidence interval represent? Do the two intervals overlap, and what does that suggest about the two populations?

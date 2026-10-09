@@ -159,23 +159,13 @@ SI_SE_tube <- sd(SI$flower_number)/sqrt(nrow(SI))
 SI_CI_tube <- c(mean(SI$tube_length_mm)-1.96*SI_SE_tube, mean(SI$tube_length_mm)+1.96*SI_SE_tube)
 
 SI_SE_angle <- sd(SI$umbel_angle_deg)/sqrt(nrow(SI))
-SI_CI_angle <- c(mean(SI$umbel_angle_deg)-1.96*SI_SE_angle, mean(SI$umbel_angle_deg)+1.96*SI_SE_angle)
+SI_CI_angle <- c(mean(SI$umbel_amgle_deg)-1.96*SI_SE_angle, mean(SI$umbel_angle_deg)+1.96*SI_SE_angle)
 
 # SC
 SC_SE_flowerNum <- sd(SC$flower_number)/sqrt(nrow(SC))
 SC_CI_flowerNum <- c(mean(SC$flower_number)-1.96*SC_SE_flowerNum, mean(SC$flower_number)+1.96*SC_SE_flowerNum)
 
-SC_SE_diam <- sd(SC$face_diam_mm)/sqrt(nrow(SC))
-SC_CI_diam <- c(mean(SC$face_diam_mm)-1.96*SC_SE_diam, mean(SC$face_diam_mm)+1.96*SC_SE_diam)
-
-SC_SE_tube <- sd(SC$flower_number)/sqrt(nrow(SC))
-SC_CI_tube <- c(mean(SC$tube_length_mm)-1.96*SC_SE_tube, mean(SC$tube_length_mm)+1.96*SC_SE_tube)
-
-SC_SE_angle <- sd(SC$umbel_angle_deg)/sqrt(nrow(SC))
-SC_CI_angle <- c(mean(SC$umbel_angle_deg)-1.96*SC_SE_angle, mean(SC$umbel_angle_deg)+1.96*SC_SE_angle)
-
-paste(SI_CI_flowerNum, SI_CI_diam, SI_CI_tube, SI_CI_angle)
-paste(SC_CI_flowerNum, SC_CI_diam, SC_CI_tube, SC_CI_angle)
+print()
 ```
 
 **Question 5:** What does each confidence interval represent? Do the two intervals overlap, and what does that suggest about the two populations?
@@ -209,7 +199,7 @@ zSI_
 
 **Question 7:** Is this a one-tailed or a two-tailed question, and why? What does the probability say about whether SC flowers are simply small SI flowers?
 
-**Answer:** This is a one-tailed question. The probability is very low, so it is 
+**Answer:** This is a one-tailed question. The probability is very low, sp
 
 ## 9. Two-sample *t*-test
 
@@ -221,7 +211,7 @@ Test whether SI and SC plants differ in face diameter with a t-test. Report *t*,
 
 **Question 8:** Every statistical test has assumptions. Name two assumptions of the *t*-test and say, in one sentence each, whether you think the *Abronia* data meet them.
 
-**Answer:** A t-test assumes independent observation, which is _ in this dataset. A t-test also assumes continuous data, which is met in this dataset. bell-curve
+**Answer:** A t-test assumes independent observation, which is _ in this dataset. A t-test also assumes continuous data, which is met in this dataset.
 
 ## 10. Face diameter against tube length
 
@@ -233,7 +223,7 @@ ggplot(aes(x=face_diam_mm , y=tube_length_mm), data=floral_data) + geom_point(ae
 
 **Question 9:** Using everything above — the site plot in Section 5, the trait means, the *t*-test and this figure — what do the data say about the two hypotheses in the instructions? Answer in a short paragraph.
 
-**Answer:** supports both
+**Answer:**
 
 # DO THIS LAST {-}
 

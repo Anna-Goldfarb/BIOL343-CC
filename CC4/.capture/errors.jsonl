@@ -26,3 +26,8 @@
 {"chunk":null,"ts":"2026-10-09T18:24:21Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: non-numeric argument to mathematical function"}
 {"chunk":null,"ts":"2026-10-09T18:24:42Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: object 'SI_SE' not found"}
 {"chunk":null,"ts":"2026-10-09T18:25:01Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: object 'SI_SE' not found"}
+{"chunk":null,"ts":"2026-10-09T18:41:40Z","pid":32570,"engine":"r","severity":"warning","render":false,"warning":"## Warning: argument is not numeric or logical: returning NA"}
+{"chunk":null,"ts":"2026-10-09T18:41:40Z","pid":32570,"engine":"r","severity":"warning","render":false,"warning":"## Warning: argument is not numeric or logical: returning NA"}
+{"chunk":null,"ts":"2026-10-09T18:41:40Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: argument \"x\" is missing, with no default"}
+{"chunk":null,"ts":"2026-10-09T18:41:54Z","pid":32570,"engine":"r","severity":"warning","render":false,"warning":"## Warning: argument is not numeric or logical: returning NA"}
+{"chunk":null,"ts":"2026-10-09T18:43:30Z","pid":32570,"engine":"r","severity":"error","render":false,"text":"## Error: invalid 'na.print' specification"}

@@ -159,7 +159,7 @@ SI_SE_tube <- sd(SI$flower_number)/sqrt(nrow(SI))
 SI_CI_tube <- c(mean(SI$tube_length_mm)-1.96*SI_SE_tube, mean(SI$tube_length_mm)+1.96*SI_SE_tube)
 
 SI_SE_angle <- sd(SI$umbel_angle_deg)/sqrt(nrow(SI))
-SI_CI_angle <- c(mean(SI$umbel_angle_deg)-1.96*SI_SE_angle, mean(SI$umbel_angle_deg)+1.96*SI_SE_angle)
+SI_CI_angle <- c(mean(SI$umbel_amgle_deg)-1.96*SI_SE_angle, mean(SI$umbel_angle_deg)+1.96*SI_SE_angle)
 
 # SC
 SC_SE_flowerNum <- sd(SC$flower_number)/sqrt(nrow(SC))
@@ -169,13 +169,9 @@ SC_SE_diam <- sd(SC$face_diam_mm)/sqrt(nrow(SC))
 SC_CI_diam <- c(mean(SC$face_diam_mm)-1.96*SC_SE_diam, mean(SC$face_diam_mm)+1.96*SC_SE_diam)
 
 SC_SE_tube <- sd(SC$flower_number)/sqrt(nrow(SC))
-SC_CI_tube <- c(mean(SC$tube_length_mm)-1.96*SC_SE_tube, mean(SC$tube_length_mm)+1.96*SC_SE_tube)
+SC_CI_tube <- c(mean(SI$tube_length_mm)-1.96*SI_SE_tube, mean(SI$tube_length_mm)+1.96*SC_SE_tube)
 
-SC_SE_angle <- sd(SC$umbel_angle_deg)/sqrt(nrow(SC))
-SC_CI_angle <- c(mean(SC$umbel_angle_deg)-1.96*SC_SE_angle, mean(SC$umbel_angle_deg)+1.96*SC_SE_angle)
-
-paste(SI_CI_flowerNum, SI_CI_diam, SI_CI_tube, SI_CI_angle)
-paste(SC_CI_flowerNum, SC_CI_diam, SC_CI_tube, SC_CI_angle)
+print()
 ```
 
 **Question 5:** What does each confidence interval represent? Do the two intervals overlap, and what does that suggest about the two populations?
