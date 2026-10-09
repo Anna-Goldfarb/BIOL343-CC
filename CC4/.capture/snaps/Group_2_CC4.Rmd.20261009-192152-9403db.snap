@@ -211,7 +211,7 @@ pnorm()
 
 **Question 7:** Is this a one-tailed or a two-tailed question, and why? What does the probability say about whether SC flowers are simply small SI flowers?
 
-**Answer:** This is a one-tailed question since it is directional. The probability is very low, so it is unlikely that SC flowers are simply small SI flowers.
+**Answer:** This is a one-tailed question. The probability is very low, so it is 
 
 ## 9. Two-sample *t*-test
 

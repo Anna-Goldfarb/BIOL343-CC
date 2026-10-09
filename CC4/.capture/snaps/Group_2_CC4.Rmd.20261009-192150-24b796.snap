@@ -206,12 +206,12 @@ Convert `SI` to z-scores and plot a histogram of them. Then convert the **mean o
 ```{r z-scores, message=FALSE}
 zSI_diam <- (SI$face_diam_mm-mean(SI$face_diam_mm))/sd(SI$face_diam_mm)
 ggplot(data=zSI_diam) + geom_histogram()
-pnorm()
+pnorm
 ```
 
 **Question 7:** Is this a one-tailed or a two-tailed question, and why? What does the probability say about whether SC flowers are simply small SI flowers?
 
-**Answer:** This is a one-tailed question since it is directional. The probability is very low, so it is unlikely that SC flowers are simply small SI flowers.
+**Answer:** This is a one-tailed question. The probability is very low, so it is 
 
 ## 9. Two-sample *t*-test
 

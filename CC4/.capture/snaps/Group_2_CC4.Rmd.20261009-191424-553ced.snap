@@ -204,14 +204,12 @@ sample(SI, 500)
 Convert `SI` to z-scores and plot a histogram of them. Then convert the **mean of the SC plants** to a z-score relative to the SI sample (subtract the SI mean, divide by the SI standard deviation), and use `pnorm()` to calculate the probability of drawing a plant with a face diameter that small **or smaller** from the SI population.
 
 ```{r z-scores, message=FALSE}
-zSI_diam <- (SI$face_diam_mm-mean(SI$face_diam_mm))/sd(SI$face_diam_mm)
-ggplot(data=zSI_diam) + geom_histogram()
-pnorm()
+zSI_diam <- 
 ```
 
 **Question 7:** Is this a one-tailed or a two-tailed question, and why? What does the probability say about whether SC flowers are simply small SI flowers?
 
-**Answer:** This is a one-tailed question since it is directional. The probability is very low, so it is unlikely that SC flowers are simply small SI flowers.
+**Answer:** This is a one-tailed question. The probability is very low, so it is 
 
 ## 9. Two-sample *t*-test
 
@@ -223,7 +221,7 @@ Test whether SI and SC plants differ in face diameter with a t-test. Report *t*,
 
 **Question 8:** Every statistical test has assumptions. Name two assumptions of the *t*-test and say, in one sentence each, whether you think the *Abronia* data meet them.
 
-**Answer:** A t-test assumes that there is a bell curve (normal) shaped distribution, which is met in this dataset. A t-test also assumes continuous data, which is met in this dataset.
+**Answer:** A t-test assumes that there is a bell curve (normal) shape, which is _ in this dataset. A t-test also assumes continuous data, which is met in this dataset. bell-curve
 
 ## 10. Face diameter against tube length
 
