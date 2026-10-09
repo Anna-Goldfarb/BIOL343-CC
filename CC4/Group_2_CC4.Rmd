@@ -149,14 +149,23 @@ For `SI` and for `SC`, calculate the standard error of the mean and the 95% conf
 
 ```{r se-ci}
 # SI
-SI_SE <- sd(SI$)/sqrt(nrow(SI))
-SI_CI <- c(x-1.96*SI_SE, x+1.96*SI_SE)
+SI_SE_flowerNum <- sd(SI$flower_number)/sqrt(nrow(SI))
+SI_CI_flowerNum <- c(mean(SI$flower_number)-1.96*SI_SE_flowerNum, mean(SI$flower_number)+1.96*SI_SE_flowerNum)
+
+SI_SE_diam <- sd(SI$face_diam_mm)/sqrt(nrow(SI))
+SI_CI_diam <- c(mean(SI$face_diam_mm)-1.96*SI_SE_diam, mean(SI$face_diam_mm)+1.96*SI_SE_diam)
+
+SI_SE_tube <- sd(SI$flower_number)/sqrt(nrow(SI))
+SI_CI_tube <- c(mean(SI$tube_length_mm)-1.96*SI_SE_, mean(SI$flower_number)+1.96*SI_SE_)
+
+SI_SE_flowerNum <- sd(SI$flower_number)/sqrt(nrow(SI))
+SI_CI_flowerNum <- c(mean(SI$flower_number)-1.96*SI_SE_, mean(SI$flower_number)+1.96*SI_SE_)
 
 # SC
-SC_SE <- sd(SC$)/sqrt(nrow(SC))
-SC_CI <- c(x-1.96*SC_SE, x+1.96*SC_SE)
+SC_SE_flowerNum <- sd(SC$flower_number)/sqrt(nrow(SC))
+SC_CI_flowerNum <- c(mean(SC$flower_number)-1.96*SC_SE_flowerNum, mean(SC$flower_number)+1.96*SC_SE_flowerNum)
 
-print(SI_CI, SC_CI)
+print()
 ```
 
 **Question 5:** What does each confidence interval represent? Do the two intervals overlap, and what does that suggest about the two populations?
@@ -185,7 +194,7 @@ sample(SI, 500)
 Convert `SI` to z-scores and plot a histogram of them. Then convert the **mean of the SC plants** to a z-score relative to the SI sample (subtract the SI mean, divide by the SI standard deviation), and use `pnorm()` to calculate the probability of drawing a plant with a face diameter that small **or smaller** from the SI population.
 
 ```{r z-scores, message=FALSE}
-
+zSI_
 ```
 
 **Question 7:** Is this a one-tailed or a two-tailed question, and why? What does the probability say about whether SC flowers are simply small SI flowers?
