@@ -169,7 +169,7 @@ Set the seed with `set.seed(343)`. Use `sample()` to draw a random sub-sample of
 
 ```{r clt}
 set.seed(343)
-sample(SI, 10)
+sample(SI, 10, replace=TRUE)
 sample(SI, 100)
 sample(SI, 500)
 ```

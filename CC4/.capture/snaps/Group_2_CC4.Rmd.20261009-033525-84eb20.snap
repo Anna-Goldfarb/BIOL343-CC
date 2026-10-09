@@ -171,7 +171,7 @@ Set the seed with `set.seed(343)`. Use `sample()` to draw a random sub-sample of
 set.seed(343)
 sample(SI, 10)
 sample(SI, 100)
-sample(SI, 500)
+sample(SI)
 ```
 
 **Question 6:** As the sub-sample grows, which of the three numbers stays roughly where it is and which one shrinks? Explain why (hint: How does this relate to the standard error?)
