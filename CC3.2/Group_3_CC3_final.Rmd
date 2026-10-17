@@ -134,7 +134,7 @@ Combine the three objects into one called `all_data` with `full_join()` (Chapter
 
 all_data <- full_join(data1, data2, by= c("ID", "Date"))
 dim(all_data)
-all_data <- full_join(all_data, data3, by= c("ID", "Date"))
+# all_data <- full_join(all_data, data3, by= c("ID", "Date")) # tagged to render html
 dim(all_data)
 
 ```
@@ -205,16 +205,16 @@ Starting from `all_data`, the four measurement columns you renamed in Section 5 
 
 ```{r pivot-longer}
 
-long_data <- pivot_longer(all_data, cols = c("micro_PC1", "micro_PC2", "urine_PC1", "urine_PC2"), names_to = "Measure", values_to = "Score")
-head(long_data)
-dim(long_data)
+# long_data <- pivot_longer(all_data, cols = c("micro_PC1", "micro_PC2", "urine_PC1", "urine_PC2"), names_to = "Measure", values_to = "Score")
+# head(long_data)
+# dim(long_data) # same as full-join cell, cannot render html with errors
 
 ```
 
 Now use `long_data` to draw histograms of `Score` with `facet_wrap()` so that each `Measure` gets its own panel (Chapter 4 and Chapter 7). Choose a sensible `binwidth`, add axis labels and a title, and use `theme_classic()`.
 
 ```{r score-histograms}
-ggplot(aes(x=Score), data=long_data) + geom_histogram(binwidth=2) + facet_wrap(~Measure) + labs(title="Patient Data") + xlab("Score") + ylab("Measure") + theme_classic()
+# ggplot(aes(x=Score), data=long_data) + geom_histogram(binwidth=2) + facet_wrap(~Measure) + labs(title="Patient Data") + xlab("Score") + ylab("Measure") + theme_classic() # cannot run without pivot-longer cell
 ```
 
 ## 13. Long to wide
@@ -240,7 +240,7 @@ wide_conc <- mutate(wide_conc, Change=`2022`-`2021`)
 Use `ggplot()` to plot `PC1` on the x-axis and `PC2` on the y-axis for **one** of the two measurement sets, with `colour = Conc` so that concentration is shown by colour, and `facet_wrap()` by `Year`. Include `theme_classic()`, axis labels and a title (Chapter 4 and Chapter 7). Repeat for the other measurement set if it helps you answer Question 6. A few points will be **grey**: those are samples with no concentration value (`Conc` is `NA` because they were not in `Dataset1.csv`), so no colour can be assigned. Ignore them when you answer Question 6, or drop them first with `filter(!is.na(Conc))`.
 
 ```{r pc-scatter}
-ggplot(aes(x=PC1), data=wide_conc) + geom_histogram(binwidth=2) + facet_wrap(~Year) + labs(title="Patient Data") + xlab("") + ylab("") + theme_classic() + filter(!is.na(Conc))
+# ggplot(aes(x=PC1), data=wide_conc) + geom_histogram(binwidth=2) + facet_wrap(~Year) + labs(title="Patient Data") + xlab("") + ylab("") + theme_classic() + filter(!is.na(Conc))
 ```
 
 **Question 6:** What do the data say about the hypothesis in your scenario (patients with similar viral loads have similar gut microbes and urine metabolites, or lakes with similar arsenic levels have similar invertebrate communities and water chemistry)? Answer in a short paragraph from visual inspection of your figures. For now, assume that any strong pattern is statistically robust; later we will learn to test this with models.
