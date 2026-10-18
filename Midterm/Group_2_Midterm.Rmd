@@ -88,9 +88,9 @@ str(alpha_metrics)
 chloroplast_asv <- rownames(tax)[!is.na(tax$Order) & tax$Order== "Chloroplast"]
 #remove the identified ASVs from both tax and otu
 otu_cleaned <- otu[, !colnames(otu) %in% chloroplast_asv]
-tax_cleaned <- tax[!rownames(tax) %in% chloroplast_asv,] |> rownames_to_column(var= "ASVID")
+tax_cleaned <- rownames_to_column(tax[!rownames(tax) %in% chloroplast_asv, ], var= "ASVID")
 #filter NAs from Type and total_reads and remove the replicate samples using Sample_AC
-metadata_filtered <- metadata %>% filter(!is.na(Type), !is.na(total_reads)) %>% distinct(Sample_AC, .keep_all= TRUE)
+metadata_filtered <- distinct(filter(metadata, !is.na(Type), !is.na(total_reads)),Sample_AC,.keep_all = TRUE)
 
 ```
 ## 4. Joining the files
@@ -100,7 +100,7 @@ Combine `metadata_filtered` and `alpha_metrics` to create a new object called `a
 Hint: **Data Science → Join Datasets and 2D Data Wrangling** in RCC2e.
 
 ```{r join-alpha}
-#alpha_merged <-
+alpha_merged <- select(inner_join(metadata_filtered, alpha_metrics, by = "Sample_AC"),Sample_AC, Type, Location, Whole_or_dissected, Shannon, Simpson)
 
 ```
 # Part 2 — Preparing and visualizing the data
@@ -112,7 +112,7 @@ Use `ggplot()` to visualize the distribution of `total_reads` across the samples
 Hint: refer to **Quick Visualizations → Histogram**, **Basic Customization → fill and colour (or color)** and **Basic Customization → lab, xlab, and ylab and Themes and Geoms** in RCC2e.
 
 ```{r histogram-total-reads}
-
+ggplot2(metadata_filtered, aes(x=total_reads)) + geom_histogram(binwidth= ,fill="skyblue", colour="black") + labs(x="Total Reads", y="Number of Samples") + theme_classic()
 ```
 ## 6. Prepare the ASV data for plotting
 
