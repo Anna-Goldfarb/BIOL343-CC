@@ -16,7 +16,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r group_members}
 # Name - Queen's Student Number
 
-# 1.
+# 1. Anna Goldfarb - 20455917
+# 2. Ella -
+# 3. Trinity -
+# 4. Henry -
+# 5. Ziadie -
 
 ```
 
