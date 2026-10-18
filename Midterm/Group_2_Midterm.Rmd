@@ -85,12 +85,12 @@ str(metadata)
 str(alpha_metrics)
 
 #identify the chloroplast ASVs
-chloroplast_asv <-
+chloroplast_asv <- rownames(tax)[!is.na(tax$Order) & tax$Order== "Chloroplast"]
 #remove the identified ASVs from both tax and otu
-otu_cleaned <-
-tax_cleaned <-
+otu_cleaned <- otu[, !colnames(otu) %in% chloroplast_asv]
+tax_cleaned <- tax[!rownames(tax) %in% chloroplast_asv,] |> rownames_to_column(var= "ASVID")
 #filter NAs from Type and total_reads and remove the replicate samples using Sample_AC
-metadata_filtered <-
+metadata_filtered <- metadata %>% filter(!is.na(Type), !is.na(total_reads)) %>% distinct(Sample_AC, .keep_all= TRUE)
 
 ```
 ## 4. Joining the files
