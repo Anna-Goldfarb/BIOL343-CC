@@ -112,7 +112,7 @@ Use `ggplot()` to visualize the distribution of `total_reads` across the samples
 Hint: refer to **Quick Visualizations → Histogram**, **Basic Customization → fill and colour (or color)** and **Basic Customization → lab, xlab, and ylab and Themes and Geoms** in RCC2e.
 
 ```{r histogram-total-reads}
-ggplot2(metadata_filtered, aes(x=total_reads)) + geom_histogram(binwidth= ,fill="skyblue", colour="black") + labs(x="Total Reads", y="Number of Samples") + theme_classic()
+ggplot(metadata_filtered, aes(x=total_reads)) + geom_histogram(binwidth=25000,fill="skyblue", colour="black") + labs(x="Total Reads", y="Number of Samples") + theme_classic()
 ```
 ## 6. Prepare the ASV data for plotting
 
