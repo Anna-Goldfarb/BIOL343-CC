@@ -79,14 +79,18 @@ Inspect `otu`, `tax`, `metadata` and `alpha_metrics` using `str()` (for `otu`, w
 Hint: refer to **R Basics → Data Types**, **R Basics → Objects & Variables**, **Data Science → 2D Data Wrangling** and **Data Science → Naughty Data** in RCC2e.
 
 ```{r inspect-and-clean}
-#str()
+str(otu[, 1:10])
+str(tax)
+str(metadata)
+str(alpha_metrics)
+
 #identify the chloroplast ASVs
-#chloroplast_asv <-
+chloroplast_asv <-
 #remove the identified ASVs from both tax and otu
-#otu_cleaned <-
-#tax_cleaned <-
+otu_cleaned <-
+tax_cleaned <-
 #filter NAs from Type and total_reads and remove the replicate samples using Sample_AC
-#metadata_filtered <-
+metadata_filtered <-
 
 ```
 ## 4. Joining the files
