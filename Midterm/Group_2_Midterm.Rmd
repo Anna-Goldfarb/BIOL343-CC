@@ -163,9 +163,10 @@ Hint: refer to **Data Science → 2D Data Wrangling** in RCC2e and, to create th
 ```{r phylum-plots}
 phylum_abundance <- otu_long %>% mutate(Phylum=ifelse(is.na(Phylum), "Other", Phylum)) %>% group_by(Sample_AC, Type, Location, Phylum) %>% summarize(relative_abundance=sum(relative_abundance), .groups="drop")
 phylum_abundance
-top7 <- phylum_abundance %>% group_by(Phylum) %>% summarize(total_abundance=sum(relative_abundance, .groups="drop")) %>% arrange(desc(total_abundance)) %>% slice_head(n=7) %>% pull(Phylum)
+top7 <- phylum_abundance %>% group_by(Phylum) %>% summarize(total_abundance=sum(relative_abundance), .groups="drop") %>% arrange(desc(total_abundance)) %>% slice_head(n=7) %>% pull(Phylum)
 top7
-
+phylum_abundance <- phylum_abundance %>% mutate(Phylum = ifelse(Phylum %in% top7_phyla, Phylum, "Other")) %>% group_by(Sample_AC, Type, Location, Phylum) %>% summarize(relative_abundance=sum(relative_abundance), .groups="drop")
+phylum_abundance
 
 ggplot() + geom_col() + labs() + theme_classic()
 ggplot() + geom_col() + labs() + theme_classic()
