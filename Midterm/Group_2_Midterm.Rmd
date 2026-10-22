@@ -191,7 +191,8 @@ Using the `alpha_merged` object:
 - Include descriptive axis labels and a title for each figure.
 
 ```{r alpha-plots}
-ggplot()
+ggplot() + labs()
+ggplot() + labs()
 ```
 # Part 3 — Testing the hypotheses
 
