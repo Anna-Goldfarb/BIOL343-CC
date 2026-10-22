@@ -161,7 +161,9 @@ Use `otu_long` to:
 Hint: refer to **Data Science → 2D Data Wrangling** in RCC2e and, to create the stacked bar plot, **Quick Visualizations → Basic Graphs**, **Basic Customization → labs, Themes and Geoms**, **Multi-plot Graphs → facets** and the **ggplot2 cheatsheet** in OnQ. *Use `geom_col()` to create the stacked bar plot instead of `geom_bar()`.*
 
 ```{r phylum-plots}
-
+phylum_abundance <- otu_long %>% mutate() %>% group_by() %>% summarize()
+# phylum_abundance
+top7 <- phylum_abundance %>% group_by() %>% summarize() %>% arrange(desc(total_abundance)) %>% slice_head()
 ggplot() + geom_col() + labs() + theme_classic()
 ggplot() + geom_col() + labs() + theme_classic()
 ```
