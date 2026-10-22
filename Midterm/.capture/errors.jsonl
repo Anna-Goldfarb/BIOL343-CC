@@ -16,3 +16,4 @@
 {"chunk":null,"ts":"2026-10-22T18:08:39Z","pid":14363,"engine":"r","severity":"error","render":false,"text":"## Error: \u001b[1m\u001b[22mCannot use `+` with a single argument.\n\u001b[36mℹ\u001b[39m Did you accidentally put `+` on a new line?"}
 {"chunk":null,"ts":"2026-10-22T18:08:47Z","pid":14363,"engine":"r","severity":"error","render":false,"text":"## Error: \u001b[1m\u001b[22mProblem while computing aesthetics.\n\u001b[36mℹ\u001b[39m Error occurred in the 1st layer.\n\u001b[1mCaused by error:\u001b[22m\n\u001b[33m!\u001b[39m object 'whole_or_dissected' not found"}
 {"chunk":null,"ts":"2026-10-22T18:33:06Z","pid":14363,"engine":"r","severity":"error","render":false,"text":"## Error: object 'ricekttsia' not found"}
+{"chunk":null,"ts":"2026-10-22T18:40:10Z","pid":14363,"engine":"r","severity":"error","render":false,"text":"## Error: object 'rickettsia_by_sample' not found"}

@@ -223,7 +223,7 @@ From `otu_long`, keep the rows whose `Genus` is `Rickettsia`, sum their relative
 ```{r rickettsia-by-type}
 rickettsia <- otu_long %>% filter(Genus=="Rickettsia")
 rickettsia_sample <- rickettsia %>% group_by(Sample_AC, Type) %>% summarize(rickettsia_abundance=sum(relative_abundance), .groups="drop")
-ggplot() + geom_boxplot() + labs() + theme_classic()
+ggplot(rickettsia_sample, aes(x=Type, y=rickettsia_abundance)) + geom_boxplot() + labs(title="Rickettsia Abundance by Sample Type", x="Sample Type", y="Rickettsia Relative Abundance") + theme_classic()
 ```
 ## 11. Two-sample *t*-tests
 
