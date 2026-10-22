@@ -206,6 +206,7 @@ Using the `alpha_merged` object:
 
 ```{r alpha-plots}
 ggplot(alpha_merged, aes(x=Whole_or_dissected, y=Shannon)) + geom_boxplot(fill="skyblue", colour="black") + labs(title="Shannon Diversity: Whole Versus Dissected Samples", x="Sample Type", y="Shannon Diversity Index") + theme_classic()
+ggplot(alpha_merged, aes(x=Whole_or_dissected, y=Simpson)) + geom_boxplot(fill="lightgreen", colour="black") + labs(title="Simpson Diversity: Whole Versus Dissected Samples", x="Sample Type", y="Simpson Diversity Index") + theme_classic()
 ```
 # Part 3 — Testing the hypotheses
 
@@ -220,8 +221,9 @@ For H1 you will use a figure and the numbers of samples per type; no statistical
 From `otu_long`, keep the rows whose `Genus` is `Rickettsia`, sum their relative abundance within each sample (keeping `Type`), and report the number of samples and the mean *Rickettsia* relative abundance for each `Type`. Then plot the per-sample *Rickettsia* relative abundance by `Type` as a boxplot with the individual points shown, with axis labels, a title and `theme_classic()`.
 
 ```{r rickettsia-by-type}
-#rickettsia <-
-
+rickettsia <- otu_long %>% filter(Genus=="Rickettsia")
+rickettsia_sample <- rickettsia %>% group_by(Sample_AC, Type) %>% summarize(rickettsia_abundance=sum(relative_abundance), .groups="drop")
+ggplot() + geom_boxplot() + labs() + theme_classic()
 ```
 ## 11. Two-sample *t*-tests
 
