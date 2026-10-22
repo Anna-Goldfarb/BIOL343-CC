@@ -186,9 +186,11 @@ Use `otu_long` to:
 Hint: as for Section 7.
 
 ```{r genus-plots}
-genus_abundance <-
-top10 <-
-genus_abundance <-
+genus_abundance <- otu_long %>% mutate(Genus = ifelse(is.na(Genus), "Other", Genus)) %>% group_by(Sample_AC, Type, Location, Genus) %>% summarize(relative_abundance=sum(relative_abundance), .groups="drop")
+genus_abundance
+top10 <- genus_abundance %>% group_by(Genus) %>% summarize(total_abundance=sum(relative_abundance)) %>% arrange(desc(total_abundance)) %>% slice_head(n=10) %>% pull(Genus)
+top10
+genus_abundance <- genus_abundance %>% mutate(Genus = ifelse(Genus %in% top10, Genus, "Other")) %>% group_by(Sample_AC, Type, Location, Genus) %>% summarize(relative_abundance=sum(relative_abundance), .groups="drop")
 ggplot() + geom_col() + labs() + theme_classic() + theme()
 ggplot() + geom_col() + labs() + theme_classic() + theme()
 ```
