@@ -205,8 +205,7 @@ Using the `alpha_merged` object:
 - Include descriptive axis labels and a title for each figure.
 
 ```{r alpha-plots}
-ggplot() + labs()
-ggplot() + labs()
+ggplot(alpha_merged, aes(x=Whole_or_dissected, y=Shannon)) + geom_boxplot(fill="skyblue", colour="black") + labs(title="Shannon Diversity: Whole Versus Dissected Samples", x="Sample Type", y="Shannon Diversity Index") + theme_classic()
 ```
 # Part 3 — Testing the hypotheses
 
