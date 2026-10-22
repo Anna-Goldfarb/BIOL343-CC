@@ -233,7 +233,10 @@ ggplot(rickettsia_sample, aes(x=Type, y=rickettsia_abundance)) + geom_boxplot() 
 - Based on the *p*-values, state whether there is evidence of a difference in alpha diversity between whole and dissected samples.
 
 ```{r t-tests}
-
+shannon_test <- t.test(Shannon~Whole_or_dissected, data=alpha_merged)
+simpson_test <- t.test(Simpson~Whole_or_dissected, data=alpha_merged)
+test_results <- data.frame(Diversity_Index=c("Shannon", "Simpson"), t_statistic=c(unname(shannon_test$statistic), unname(simpson_test$statistic)), df=c(unname(shannon_test$parameter), unname(simpson_test$parameter)), p_value=c(shannon_test$p.value, simpson_test$p.value))
+knitr::kable(test_results, digits = 4, caption = "Two-sample t-tests comparing alpha diversity between whole and dissected samples")
 ```
 ## 12. Interpretation
 
