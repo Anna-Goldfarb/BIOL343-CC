@@ -242,9 +242,9 @@ knitr::kable(test_results, digits = 4, caption = "Two-sample t-tests comparing a
 
 In a short paragraph for each hypothesis, say what the figures and tests above show, whether the hypothesis is supported, and what the main limitation of the evidence is.
 
-**H1 — Answer:** The three boxplot figures supoprt hypothesis #1 that *Rickettsia* relative abundance is higher in gut samples than in other sample types.
+**H1 — Answer:** The three boxplot figures do not supoprt hypothesis #1 that *Rickettsia* relative abundance is higher in gut samples than in other sample types. Therefore relative abundance in gut sample types is not higher than in other sample types.
 
-**H2 — Answer:** The t-test results support hypothesis #2 that whole-tick samples has higher microbial alpha diversity than dissected samples according to both the the Shannon and Simpson indices, with statistically significant results.
+**H2 — Answer:** The t-test results support hypothesis #2 that whole-tick samples has higher microbial alpha diversity than dissected samples according to both the the Shannon and Simpson indices. These results were found to be statistically significant.
 
 # DO THIS LAST {-}
 
