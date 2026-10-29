@@ -74,8 +74,9 @@ str(floral_data)
 Plot face diameter (y) against latitude (x) with a fitted straight line through the points, axis labels with units and a clean theme. Then fit a linear model with face diameter as the response and latitude as the only predictor, and print its summary.
 
 ```{r regression, message=FALSE}
-
-# lat_mod <-
+library(tidyverse)
+lat_mod <- ggplot(aes(x=face_diam_mm, y=latitude_N), data=floral_data) + geom_point() + labs(x="Flower Face Diameter (mm)", y="Latitude (Degrees North)") + theme_classic()
+lat_mod + geom_smooth(method="lm")
 
 ```
 

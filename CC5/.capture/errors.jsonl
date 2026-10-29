@@ -1,0 +1,7 @@
+{"chunk":null,"ts":"2026-10-29T16:56:48Z","pid":93828,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘ggplot2’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-10-29T16:56:48Z","pid":93828,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘tibble’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-10-29T16:56:48Z","pid":93828,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘tidyr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-10-29T16:56:48Z","pid":93828,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘readr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-10-29T16:56:48Z","pid":93828,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘purrr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-10-29T16:56:48Z","pid":93828,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘dplyr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-10-29T16:56:48Z","pid":93828,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘lubridate’ was built under R version 4.5.2"}
