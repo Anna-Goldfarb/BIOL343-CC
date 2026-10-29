@@ -65,7 +65,7 @@ str(floral_data)
 
 **Question 1:** Which columns of this dataset could be **response** variables in a basic linear model, and which could be **predictors**? For each predictor you name, say whether it is continuous or nominal.
 
-**Answer:**
+**Answer:** Response variables are continuous, so columns like face_diagram_mm, tube_length_mm, or unbel_angle_deg could be response variables. The columns self_inc, site, and latitude_N are nominal (categorical) and could be predictors. The column flower_number is ordinal (but would be considered otherwise, possibly continuous) and could be a predictor.
 
 # Part 2 — One predictor {-}
 
