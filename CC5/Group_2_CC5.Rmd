@@ -65,7 +65,7 @@ str(floral_data)
 
 **Question 1:** Which columns of this dataset could be **response** variables in a basic linear model, and which could be **predictors**? For each predictor you name, say whether it is continuous or nominal.
 
-**Answer:** Potential response variables are face_diagram_mm, tube_length_mm, or unbel_angle_deg could be response variables. The columns self_inc, site, and latitude_N are nominal (categorical) and could be predictors. The column flower_number is ordinal (but would be considered otherwise, possibly continuous) and could be a predictor.
+**Answer:** Potential response variables are face_diam_mm, tube_length_mm, umbel_angle_deg, and flower_number. The columns self_inc and site could be nominal predictors. Potential continuous predictors are latitude_N, umbel_angle_deg, tube_length_mm, and possibly flower_number (but flower_number is discreet).
 
 # Part 2 — One predictor {-}
 
@@ -75,23 +75,24 @@ Plot face diameter (y) against latitude (x) with a fitted straight line through 
 
 ```{r regression, message=FALSE}
 library(tidyverse)
-lat_mod <- ggplot(aes(x=face_diam_mm, y=latitude_N), data=floral_data) + geom_point() + labs(x="Flower Face Diameter (mm)", y="Latitude (Degrees North)") + theme_classic()
-lat_mod + geom_smooth(method="lm")
+ggplot(aes(x=latitude_N, y=face_diam_mm), data=floral_data) + geom_point() + labs(y="Flower Face Diameter (mm)", x="Latitude (°N)") + theme_classic() + geom_smooth(method="lm")
+lat_mod <- lm(face_diam_mm ~ latitude_N, data = floral_data)
+summary(lat_mod)
 
 ```
 
 **Question 2:** Write out the fitted equation with the numbers filled in ($y = \beta_0 + \beta_1 x$). In plain language, what does the slope mean (with units), and what does the R² mean? Is the intercept biologically meaningful?
 
-**Answer:** $y = \beta_0 + \beta_1 x$
-The slope of this equation represents _. The R² represents _. The inercept...
+**Answer:** $y = 2653188 - 0.45460 x$
+The slope of this equation represents how for every 1°N increase in latitude, flower face diameter decreases by 0.45460mm. The R² represents the proportion of flower diameter variation that can be explained by latitude (0.1818, or 18.18%). The inercept is not biologically meaningful because it represents the flower diameter at 0°N, and this is not part of the measurments taken and is not relevant to our study.
 
 # ANOVA
 
 Draw a boxplot of face diameter by mating system. Then fit a linear model with mating system as the only predictor, and print both the summary and the analysis-of-variance table for the model.
 
 ```{r anova}
-ggplot(aes(x=face_diam_mm, y=self_inc,), data=floral_data) + geom_boxplot()
-ms_mod <-
+ggplot(aes(x=self_inc, y=face_diam_mm,), data=floral_data) + geom_boxplot() + labs(x="Mating System", y="Flower Face Diameter (mm)") + theme_classic()
+ms_mod <- lm(face_diam_mm ~ self_inc, data=floral_data)
 summary(ms_mod)
 anova(ms_mod)
 
