@@ -118,7 +118,7 @@ ggplot(aes(x=latitude_N, y=face_diam_mm, colour=self_inc), data=floral_data) + g
 
 **Question 4:** Compare the latitude slope in this model with the slope from task 2. What happened, and why? Which predictor explains the small flowers of the northern populations, mating system or latitude?
 
-**Answer:** After including the mating system, the slope became positive. This is because northern populations tend to be SC, so the relationship between latitude and face diameter is no longer considered in the same way as before. Mating system better explains the small flowers of northern populations, rather than latitude.
+**Answer:** After including the mating system, the slope became positive. This is because northern populations tend to be SC, so the relationship between latitude and face diameter is no longer considered in the same way as before. Mating system better explains the diameter of northern populations, rather than latitude.
 
 # Part 4 — QA/QC {-}
 
@@ -129,16 +129,17 @@ For the two-predictor model from task 4, add the residuals and the predicted val
 ```{r qc-plots, message=FALSE}
 
 floral_data$residuals <- residuals(both_mod)
-floral_data$fitted <- fitted(both_nod)
-ggplot(aes()) + geom_histogram() + theme_classic()
-ggplot(aes()) +
-
+floral_data$predicted <- fitted(both_mod)
+ggplot(aes(x=residuals), data=floral_data) + geom_histogram() + theme_classic() + labs(x="Residuals")
+ggplot(aes())
+ggplot(aes(x=predicted, y=residuals), data=floral_data) + geom_point() + theme_classic() + labs(x="Predicted", y="Residuals")
+ggplot(aes(x=self_inc, y=residuals), data=floral_data) + geom_boxplot() + theme_classic() + labs(x="Mating System", y="Residuals")
 
 ```
 
 **Question 5:** A linear model makes two key assumptions about its residuals. State them. For each one, say whether these plots suggest the two-predictor model meets it, naming the plot that tells you. If an assumption is violated, what could you do about it?
 
-**Answer:**
+**Answer:** A linear model assumes a normal distribution and relatively constant variance (homoscadcity).
 
 # Report the result
 
