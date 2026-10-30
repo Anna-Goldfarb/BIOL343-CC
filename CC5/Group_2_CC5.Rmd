@@ -130,16 +130,19 @@ For the two-predictor model from task 4, add the residuals and the predicted val
 
 floral_data$residuals <- residuals(both_mod)
 floral_data$predicted <- fitted(both_mod)
-ggplot(aes(x=residuals), data=floral_data) + geom_histogram() + theme_classic() + labs(x="Residuals")
-ggplot(aes())
-ggplot(aes(x=predicted, y=residuals), data=floral_data) + geom_point() + theme_classic() + labs(x="Predicted", y="Residuals")
-ggplot(aes(x=self_inc, y=residuals), data=floral_data) + geom_boxplot() + theme_classic() + labs(x="Mating System", y="Residuals")
+ggplot(aes(x=residuals), data=floral_data) + geom_histogram(bins=30, fill="skyblue", colour="black") + theme_classic() + labs(x="Residuals (mm)", y="Frequency")
+
+ggplot(aes(sample=residuals), data=floral_data) + stat_qq() + labs(x="Theoretical Quantiles", y="Sample Quantiles") + theme_classic()
+
+ggplot(aes(x=predicted, y=residuals), data=floral_data) + geom_point() + theme_classic() + labs(x="Predicted Flower Face Diameter (mm)", y="Residuals (mm)")
+
+ggplot(aes(x=self_inc, y=residuals), data=floral_data) + geom_boxplot(fill="skyblue") + theme_classic() + labs(x="Mating System", y="Residuals (mm)")
 
 ```
 
 **Question 5:** A linear model makes two key assumptions about its residuals. State them. For each one, say whether these plots suggest the two-predictor model meets it, naming the plot that tells you. If an assumption is violated, what could you do about it?
 
-**Answer:** A linear model assumes a normal distribution and relatively constant variance (homoscadcity).
+**Answer:** A linear model assumes a normal distribution and relatively constant variance (homoscadcity). The histogram, Q-Q plot, and the boxplot meet these assumptions. The scatterplot violates the assumption of homoscedacity. This could be resolved by taking more samples to obtain a more constant variance, which more data points could acheive.
 
 # Report the result
 
