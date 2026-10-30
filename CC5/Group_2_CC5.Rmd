@@ -128,7 +128,11 @@ For the two-predictor model from task 4, add the residuals and the predicted val
 
 ```{r qc-plots, message=FALSE}
 
-# floral_data$residuals <-
+floral_data$residuals <- residuals(both_mod)
+floral_data$fitted <- fitted(both_nod)
+ggplot(aes()) + geom_histogram() + theme_classic()
+ggplot(aes()) +
+
 
 ```
 
@@ -148,7 +152,7 @@ Make a publication-quality figure of the two-predictor model (the task-4 plot, t
 
 **Question 6 (reflection):** Your final project will ask for exactly this step on the class dataset. In one or two sentences each: what response and which predictor(s) from the class dataset would you choose, and which of the checks in task 5 do you expect to be the problem?
 
-**Answer:**
+**Answer:** I would choose the response face_diam_mm, and the predictor self_inc from the class dataset. I expect that...
 
 # DO THIS LAST {-}
 
