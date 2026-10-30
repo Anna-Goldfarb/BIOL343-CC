@@ -149,7 +149,10 @@ ggplot(aes(x=self_inc, y=residuals), data=floral_data) + geom_boxplot(fill="skyb
 Make a publication-quality figure of the two-predictor model (the task-4 plot, tidied), with a caption given by the chunk option `fig.cap = "..."` and the code hidden with `echo = FALSE`, so that only the figure and its caption appear in the knitted document. Then, on the **Answer** line, write a short results paragraph (three or four sentences) as you would for a paper or a presentation slide: the model you fitted, the estimates with their standard errors and test statistics, the R², and what the result means biologically.
 
 ```{r final-figure, echo=FALSE, message=FALSE, fig.cap="Write your caption here."}
+# plot_data <- data.frame(latitude_N=seq(min(floral_data$latitude_N), max(floral_data$latitude_N), length.out=100), self_inc=levels(factor(floral_data$self_inc)))
+plot_data$predicted <- predict(both_mod, newdata = plot_data)
 
+ggplot(floral_data, aes(x=latitude_N, y=face_diam_mm, color=self_inc)) + geom_point(alpha=0.4, size=1.5) + geom_line(data=plot_data, aes(y=predicted), linewidth=1.2) + scale_color_manual(values=c("SC"="#D55E00", "SI"="#0072B2"), labels=c("SC"="Self-compatible", "SI"="Self-incompatible")) + labs(x="Latitude (°N)", y="Flower face diameter (mm)", color="Mating system") + theme_classic(base_size=13) + theme(legend.position="top", axis.title = element_text(size = 13), axis.text=element_text(size=11))
 ```
 
 **Answer:**
