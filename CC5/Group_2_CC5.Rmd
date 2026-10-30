@@ -118,7 +118,7 @@ ggplot(aes(x=latitude_N, y=face_diam_mm, colour=self_inc), data=floral_data) + g
 
 **Question 4:** Compare the latitude slope in this model with the slope from task 2. What happened, and why? Which predictor explains the small flowers of the northern populations, mating system or latitude?
 
-**Answer:**
+**Answer:** After including the mating system, the slope became positive. This is because northern populations tend to be SC, so the relationship between latitude and face diameter is no longer considered in the same way as before. Mating system better explains the small flowers of northern populations, rather than latitude.
 
 # Part 4 — QA/QC {-}
 
