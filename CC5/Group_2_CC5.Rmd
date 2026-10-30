@@ -100,7 +100,7 @@ anova(ms_mod)
 
 **Question 3:** The summary has an `(Intercept)` row and a `self_incSI` row, but no `self_incSC` row. What does each of the two estimates represent, and how do they relate to the SI and SC means you calculated in CC4? Compare the `self_incSI` estimate with the 95% confidence interval of the difference from your CC4 *t*-test.
 
-**Answer:**
+**Answer:** The intercet represents the mean flower face diameter of SC plants. There is not self_incSC because it is the reference value. The self_incSI estimate represents the difference between SI and SC mean flower face diameter. The estimate falls in the middle of the 95% confidence interval because it is the difference value between SI and SC.
 
 # Part 3 — Two predictors {-}
 
@@ -110,8 +110,10 @@ Fit a model with **both** latitude and mating system as predictors, and print th
 
 ```{r two-predictors}
 
-# both_mod <-
-
+both_mod <- lm(face_diam_mm ~ latitude_N + self_inc, data=floral_data)
+summary(both_mod)
+anova(both_mod)
+ggplot(aes(x=latitude_N, y=face_diam_mm, colour=self_inc), data=floral_data) + geom_point() + labs(x="Latitude (°N)", y="Flower Face Diameter (mm)", colour="Mating System") + theme_classic() + geom_smooth(method="lm")
 ```
 
 **Question 4:** Compare the latitude slope in this model with the slope from task 2. What happened, and why? Which predictor explains the small flowers of the northern populations, mating system or latitude?
