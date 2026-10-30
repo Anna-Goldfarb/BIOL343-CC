@@ -17,7 +17,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r group_members}
 # Name - Queen's Student Number
 
-# 1.
+# 1. Anna Goldfarb - 20455917
+# 2. Ziadie Diebel -
+# 3. Henry Moore -
+# 4. Ella Schuppek -
+# 5. Elijah Dipchand -
+# 6. Maie Trinity Wyshynski -
 
 ```
 
@@ -52,13 +57,15 @@ Import the observations, save them as an object called `floral_data`, and check 
 
 ```{r import-data}
 
-# floral_data <-
+floral_data <- read.csv("/Users/annagoldfarb/Desktop/BIOL343/BIOL343-CC/CC5/data/AbroniaFloralData.csv")
+dim(floral_data)
+str(floral_data)
 
 ```
 
 **Question 1:** Which columns of this dataset could be **response** variables in a basic linear model, and which could be **predictors**? For each predictor you name, say whether it is continuous or nominal.
 
-**Answer:**
+**Answer:** Potential response variables are face_diagram_mm, tube_length_mm, or unbel_angle_deg could be response variables. The columns self_inc, site, and latitude_N are nominal (categorical) and could be predictors. The column flower_number is ordinal (but would be considered otherwise, possibly continuous) and could be a predictor.
 
 # Part 2 — One predictor {-}
 
@@ -67,22 +74,26 @@ Import the observations, save them as an object called `floral_data`, and check 
 Plot face diameter (y) against latitude (x) with a fitted straight line through the points, axis labels with units and a clean theme. Then fit a linear model with face diameter as the response and latitude as the only predictor, and print its summary.
 
 ```{r regression, message=FALSE}
-
-# lat_mod <-
+library(tidyverse)
+lat_mod <- ggplot(aes(x=face_diam_mm, y=latitude_N), data=floral_data) + geom_point() + labs(x="Flower Face Diameter (mm)", y="Latitude (Degrees North)") + theme_classic()
+lat_mod + geom_smooth(method="lm")
 
 ```
 
 **Question 2:** Write out the fitted equation with the numbers filled in ($y = \beta_0 + \beta_1 x$). In plain language, what does the slope mean (with units), and what does the R² mean? Is the intercept biologically meaningful?
 
-**Answer:**
+**Answer:** $y = \beta_0 + \beta_1 x$
+The slope of this equation represents _. The R² represents _. The inercept...
 
 # ANOVA
 
 Draw a boxplot of face diameter by mating system. Then fit a linear model with mating system as the only predictor, and print both the summary and the analysis-of-variance table for the model.
 
 ```{r anova}
-
-# ms_mod <-
+ggplot(aes(x=face_diam_mm, y=self_inc,), data=floral_data) + geom_boxplot()
+ms_mod <-
+summary(ms_mod)
+anova(ms_mod)
 
 ```
 
