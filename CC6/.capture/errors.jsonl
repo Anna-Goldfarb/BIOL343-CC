@@ -16,3 +16,6 @@
 {"chunk":null,"ts":"2026-11-05T21:38:15Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: object 'inflorencences' not found"}
 {"chunk":null,"ts":"2026-11-05T22:04:14Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: all arguments must have the same length"}
 {"chunk":null,"ts":"2026-11-05T22:04:24Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: all arguments must have the same length"}
+{"chunk":null,"ts":"2026-11-05T22:42:13Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: object 'sensetivity' not found"}
+{"chunk":null,"ts":"2026-11-05T22:42:20Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: object 'sensitivity' not found"}
+{"chunk":null,"ts":"2026-11-05T22:42:29Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: object 'specificity' not found"}

@@ -145,7 +145,15 @@ A manager suggests a cheap way to tell whether beetles were released at a site w
 ```{r accuracy}
 lythrum_ce <- lythrum_ce %>% mutate(predicted=ifelse(damage>=3,"Release","Nonrelease"))
 table(Predicted=lythrum_ce$predicted,Actual=lythrum_ce$release)
-
+TPos <- sum(lythrum_ce$predicted == "Release" & lythrum_ce$release == "Release")
+FPos <- sum(lythrum_ce$predicted == "Release" & lythrum_ce$release == "Nonrelease")
+TNeg <- sum(lythrum_ce$predicted == "Nonrelease" & lythrum_ce$release == "Nonrelease")
+FNeg <- sum(lythrum_ce$predicted == "Nonrelease" & lythrum_ce$release == "Release")
+accuracy <- (TPos+TNeg)/(TPos+FPos+TNeg+FNeg)
+sensitivity <- TPos/(TPos+FNeg)
+specificity <- TNeg/(TNeg+FPos)
+FDR <- FPos/(TPos+FPos)
+c(TruePositive=TPos, FalsePositive=FPos, TrueNegative=TNeg, FalseNegative=FNeg, Accuracy=accuracy, Sensitivity=sensitivity, Specificity=specificity, FalseDiscoveryRate=FDR)
 ```
 
 **Question 6:** Report the four rates. Why is the false discovery rate so much higher than you might expect from the accuracy? If the manager's goal is to find **every** release site so that it can be monitored, should the check be more sensitive or more specific, and which way would you move the threshold of 3?
