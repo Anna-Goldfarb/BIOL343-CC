@@ -1,0 +1,8 @@
+{"chunk":null,"ts":"2026-11-05T19:05:02Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: could not find function \"%>%\""}
+{"chunk":null,"ts":"2026-11-05T19:05:54Z","pid":54669,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘ggplot2’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-05T19:05:54Z","pid":54669,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘tibble’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-05T19:05:54Z","pid":54669,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘tidyr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-05T19:05:54Z","pid":54669,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘readr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-05T19:05:54Z","pid":54669,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘purrr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-05T19:05:54Z","pid":54669,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘dplyr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-05T19:05:54Z","pid":54669,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘lubridate’ was built under R version 4.5.2"}

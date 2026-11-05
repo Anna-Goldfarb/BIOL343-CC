@@ -52,9 +52,12 @@ Import the data as an object called `lythrum` and check its structure. Then use 
 
 ```{r import-data}
 
-# lythrum <-
-
-# lythrum_ce <-
+lythrum <- read.csv("/Users/annagoldfarb/Desktop/BIOL343/BIOL343-CC/CC6/data/loosestrife.csv")
+dim(lythrum)
+str(lythrum)
+head(lythrum)
+library(tidyverse)
+lythrum_ce <- lythrum %>% filter(region %in% c("Central", "East"))
 
 ```
 
