@@ -72,8 +72,8 @@ lythrum_ce %>% count(region, release)
 Draw a boxplot of damage by region, filled by release, with axis labels and a clean theme. Calculate the mean damage of each of the four region × release groups. Then fit a linear model of damage with region, release **and their interaction** as predictors, and print the summary and the ANOVA table.
 
 ```{r two-categorical}
-
-# int_mod <-
+ggplot(lythrum_ce, aes(x=region, y=damage, fill=release)) + geom_boxplot() + labs(x="Region (Central or East)", y="Leaf Damage", fill="Release Status") + theme_classic
+int_mod <- lm()
 
 ```
 
