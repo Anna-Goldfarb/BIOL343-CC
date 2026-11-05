@@ -88,7 +88,7 @@ summary(int_mod)
 Plot damage (y) against latitude (x), coloured by release, with a fitted straight line for each release group, axis labels with units, a legend title and a clean theme. Then fit a linear model of damage with latitude, release and their interaction as predictors, and print the summary and the ANOVA table.
 
 ```{r continuous-categorical, message=FALSE}
-ggplot(lythrum_ce, aes(x=latitude, y=damage, colour=release)) + geom_point() + geom_smooth(method=lm, se=FALSE) + labs(x="Latitude (degrees North", y="Leaf Damaage", colour="Release Status") + theme_classic()
+ggplot(lythrum_ce, aes(x=latitude, y=damage, colour=release)) + geom_point() + geom_smooth(method=lm, se=FALSE) + labs(x="Latitude (°N)", y="Leaf Damaage", colour="Release Status") + theme_classic()
 lat_mod <- lm(damage~latitude*release, data=lythrum_ce)
 anova(lat_mod)
 summary(lat_mod)
@@ -105,7 +105,11 @@ summary(lat_mod)
 Plot longitude by region. Calculate the correlations among the five continuous columns (latitude, longitude and the three plant measures). Then fit three linear models of damage: one with region as the only predictor, one with longitude as the only predictor, and one with both, and print the three summaries.
 
 ```{r collinearity}
-
+ggplot(lythrum_ce, aes(x=region,y=longitude)) + geom_boxplot() + labs(x="Region (Central or East)", y="Longitude (°)") + theme_classic()
+cor(lythrum_ce[, c("latitude","longitude","stemsper50m2","stemheight_cm","inflorescences")], use="complete.obs")
+region_mod <- lm(damage~region, data=lythrum_ce)
+long_mod <- lm(damage~longitude, data=lythrum_ce)
+both_mod <- lm(damage~region+longitude, data=lythrum_ce)
 ```
 
 **Question 4:** Which two predictors are collinear, and why would you expect that from how the regions are defined? Does your correlation table show it? Compare the estimates, standard errors and *p*-values for region and longitude across the three models. Why does the model with both predictors find "significant" effects that neither predictor shows alone? Which predictor would you keep, and why?

@@ -9,3 +9,4 @@
 {"chunk":null,"ts":"2026-11-05T19:27:37Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: \u001b[1m\u001b[22mCan't add `theme_classic` to a \u001b[34m<ggplot>\u001b[39m object\n\u001b[36mℹ\u001b[39m Did you forget to add parentheses, as in `theme_classic()`?"}
 {"chunk":null,"ts":"2026-11-05T19:27:42Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: \u001b[1m\u001b[22mCan't add `theme_classic` to a \u001b[34m<ggplot>\u001b[39m object\n\u001b[36mℹ\u001b[39m Did you forget to add parentheses, as in `theme_classic()`?"}
 {"chunk":null,"ts":"2026-11-05T19:27:57Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: could not find function \"aggragate\""}
+{"chunk":null,"ts":"2026-11-05T20:53:29Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: object 'lonitude' not found"}
