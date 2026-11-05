@@ -81,14 +81,14 @@ summary(int_mod)
 
 **Question 2:** Using only the estimates in the summary, calculate the mean damage of each of the four groups, and check them against the four group means you calculated at the start of this task. Is the interaction positive (synergistic) or negative (antagonistic), and is it significant? What do you conclude about hypotheses 1 and 2?
 
-**Answer:** The mean damage for each group alighns with the means calculated at the start of the task.
+**Answer:** The mean damage for each group alighns with the means calculated at the start of the task. The interaction in negative/antagonistic but is not significant. Hypothesis 1 is not supported because region damage is not significant. Hypothesis 2 is supported because release sites in both regions recieved significantly higher damage.
 
 # A continuous and a categorical predictor
 
 Plot damage (y) against latitude (x), coloured by release, with a fitted straight line for each release group, axis labels with units, a legend title and a clean theme. Then fit a linear model of damage with latitude, release and their interaction as predictors, and print the summary and the ANOVA table.
 
 ```{r continuous-categorical, message=FALSE}
-
+ggplot(lythrum, aes(x=latitude, y=damage, colour=release)) + geom_point() + geom_smooth(method=lm) + labs(x="Latitude (degrees North", y="Leaf Damaage", colour="Release Status") + theme_classic()
 # lat_mod <-
 
 ```
