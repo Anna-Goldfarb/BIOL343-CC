@@ -88,14 +88,15 @@ summary(int_mod)
 Plot damage (y) against latitude (x), coloured by release, with a fitted straight line for each release group, axis labels with units, a legend title and a clean theme. Then fit a linear model of damage with latitude, release and their interaction as predictors, and print the summary and the ANOVA table.
 
 ```{r continuous-categorical, message=FALSE}
-ggplot(lythrum, aes(x=latitude, y=damage, colour=release)) + geom_point() + geom_smooth(method=lm) + labs(x="Latitude (degrees North", y="Leaf Damaage", colour="Release Status") + theme_classic()
-# lat_mod <-
-
+ggplot(lythrum_ce, aes(x=latitude, y=damage, colour=release)) + geom_point() + geom_smooth(method=lm, se=FALSE) + labs(x="Latitude (degrees North", y="Leaf Damaage", colour="Release Status") + theme_classic()
+lat_mod <- lm(damage~latitude*release, data=lythrum_ce)
+anova(lat_mod)
+summary(lat_mod)
 ```
 
 **Question 3:** Write the fitted equation (intercept and slope) for the non-release sites and for the release sites. What does the interaction estimate mean in this model? Is there evidence that the slope of damage against latitude differs between release and non-release sites?
 
-**Answer:**
+**Answer:** The Nonrelease site equation is $y=43.5218-9226x$ and the Release site equation is $y=19.393-0.3665x$. The interaction estimate means that there is a positive/sychronous relationship between latitude and release. The slope of damage against latitude of 0.5561 less negative at Release sites than at Nonrelease sites, but this is not stastically significant.
 
 # Part 3 — Collinearity {-}
 
