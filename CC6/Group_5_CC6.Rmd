@@ -136,13 +136,15 @@ summary(inflo_mod)
 
 **Question 5:** Do any of the three models support hypothesis 3? Suppose damage had no effect at all on any of the three measures. What is the probability that at least one of three independent tests gives *p* < 0.05 by chance? What does that mean for a study that tests many responses or many predictors?
 
-**Answer:**
+**Answer:** None of the models support Hypothesis 3, as none of the measures were significant predictors of damage. The proability of a Type I error in any of the three tests is 14.26%. This is the chance of a statistically significant test result appearing purly by chance from multiple responses and predictors, therefore requiring correction.
 
 # How good is a quick field check?
 
 A manager suggests a cheap way to tell whether beetles were released at a site without checking the records: call it a release site if its damage index is **3 or more**. Add a column to `lythrum_ce` with this prediction, and make a table of the predicted against the actual release status. Treating "release" as a positive result, count the true positives, false positives, true negatives and false negatives, and calculate the accuracy, sensitivity, specificity and false discovery rate of the check.
 
 ```{r accuracy}
+lythrum_ce <- lythrum_ce %>% mutate(predicted=ifelse(damage>=3,"Release","Nonrelease"))
+table(Predicted=lythrum_ce$predicted,Actual=lythrum_ce$release)
 
 ```
 

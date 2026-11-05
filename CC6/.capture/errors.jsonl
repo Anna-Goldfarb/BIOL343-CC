@@ -14,3 +14,5 @@
 {"chunk":null,"ts":"2026-11-05T21:38:07Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: object 'inflorenscence' not found"}
 {"chunk":null,"ts":"2026-11-05T21:38:12Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: object 'inflorencence' not found"}
 {"chunk":null,"ts":"2026-11-05T21:38:15Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: object 'inflorencences' not found"}
+{"chunk":null,"ts":"2026-11-05T22:04:14Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: all arguments must have the same length"}
+{"chunk":null,"ts":"2026-11-05T22:04:24Z","pid":54669,"engine":"r","severity":"error","render":false,"text":"## Error: all arguments must have the same length"}
