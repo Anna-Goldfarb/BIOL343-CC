@@ -58,12 +58,12 @@ str(lythrum)
 head(lythrum)
 library(tidyverse)
 lythrum_ce <- lythrum %>% filter(region %in% c("Central", "East"))
-
+lythrum_ce %>% count(region, release)
 ```
 
 **Question 1:** How many sites are in each of the four combinations of region and release? Why might the small number of release sites be a problem when you test region and release in the same model?
 
-**Answer:**
+**Answer:** There are 17 Central Nonrelease sites, 3 Central Release sites, 14 East Nonrelease sites, and 4 East Release sites. Lower sample size (release sites) of the variable increases the standard error and decreases the accuracy/certainty of model estimates.
 
 # Part 2 — Interaction terms {-}
 
