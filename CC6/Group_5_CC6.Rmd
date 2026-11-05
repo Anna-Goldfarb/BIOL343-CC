@@ -108,13 +108,16 @@ Plot longitude by region. Calculate the correlations among the five continuous c
 ggplot(lythrum_ce, aes(x=region,y=longitude)) + geom_boxplot() + labs(x="Region (Central or East)", y="Longitude (°)") + theme_classic()
 cor(lythrum_ce[, c("latitude","longitude","stemsper50m2","stemheight_cm","inflorescences")], use="complete.obs")
 region_mod <- lm(damage~region, data=lythrum_ce)
+summary(region_mod)
 long_mod <- lm(damage~longitude, data=lythrum_ce)
+summary(long_mod)
 both_mod <- lm(damage~region+longitude, data=lythrum_ce)
+summary(both_mod)
 ```
 
 **Question 4:** Which two predictors are collinear, and why would you expect that from how the regions are defined? Does your correlation table show it? Compare the estimates, standard errors and *p*-values for region and longitude across the three models. Why does the model with both predictors find "significant" effects that neither predictor shows alone? Which predictor would you keep, and why?
 
-**Answer:**
+**Answer:** Region and longitude are collinear because they are defined by location (East region and Eastern longitudes). The table does not show it because region is categorical. Coefficients and standard error increases when the predictors are combined. I would keep longitude because it is continuous.
 
 # Part 4 — False positives and model accuracy {-}
 
@@ -123,7 +126,12 @@ both_mod <- lm(damage~region+longitude, data=lythrum_ce)
 Hypothesis 3 says that beetle damage reduces the abundance of the plant and changes its growth form. Fit three linear models, one for each plant measure (stem density, stem height and inflorescences) as the response, each with damage as the only predictor, and print the three summaries.
 
 ```{r three-tests}
-
+dense_mod <- lm(damage~stemsper50m2, data=lythrum_ce)
+summary(dense_mod)
+height_mod <- lm(damage~stemheight_cm, data=lythrum_ce)
+summary(height_mod)
+inflo_mod <- lm(damage~inflorescences, data=lythrum_ce)
+summary(inflo_mod)
 ```
 
 **Question 5:** Do any of the three models support hypothesis 3? Suppose damage had no effect at all on any of the three measures. What is the probability that at least one of three independent tests gives *p* < 0.05 by chance? What does that mean for a study that tests many responses or many predictors?
