@@ -158,7 +158,7 @@ c(TruePositive=TPos, FalsePositive=FPos, TrueNegative=TNeg, FalseNegative=FNeg, 
 
 **Question 6:** Report the four rates. Why is the false discovery rate so much higher than you might expect from the accuracy? If the manager's goal is to find **every** release site so that it can be monitored, should the check be more sensitive or more specific, and which way would you move the threshold of 3?
 
-**Answer:**
+**Answer:** The accuracy is 76.32%, the sensitivity is 71.43%, the specificity is 77.42%, and the false discovery rate is 58.33%. The false discovery rate is high because there are so few release sites, so false positives are more likely despite relatively good accuracy. The check should be more sensitive and the threshold should be lowered, but there will be reduced specificity.
 
 # DO THIS LAST {-}
 
