@@ -91,13 +91,15 @@ Hypothesis 1 says native richness depends on island area and elevation but not o
 
 ```{r anova}
 
-# h1_mod <-
+h1_mod <- lm(ntv.rich ~ area + elev + dist.mnland, data=islands)
+summary(h1_mod)
+anova(area_mod, h1_mod)
 
 ```
 
 **Question 3:** Why are these two models *nested*? Which is the full and which the reduced model? Does adding elevation and distance from the mainland improve the fit more than expected by chance? What does that say about hypothesis 1?
 
-**Answer:**
+**Answer:** The models are nested because area_mod contains a subset of the predictors in h1_mod. Therefore, the reduced model is area_mod and the full model is h1_mod. Adding elevation and distance does not significantly improve fit more that what is expected by chance. This means that hypothesis 1 is partially supported, as plant richness increases with area and distance from mainland has no significant effect on this, but plant richness does not increase with elevation.
 
 # Part 3 — Likelihood {-}
 
@@ -106,7 +108,12 @@ Hypothesis 1 says native richness depends on island area and elevation but not o
 Compare the same two models with a likelihood ratio test. Then calculate the test statistic and its *p*-value yourself from the two log-likelihoods.
 
 ```{r lrt}
-
+library(lmtest)
+lrtest(area_mod, h1_mod)
+lglk_area <- as.numeric(logLik(area_mod))
+lglk_h1 <- as.numeric(logLik(h1_mod))
+lrStat <- 2*(lglk_h1 - lglk_area)
+lrStat
 
 ```
 
