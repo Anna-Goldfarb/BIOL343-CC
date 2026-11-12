@@ -73,13 +73,17 @@ library(tidyverse)
 ggplot(islands, aes(x=area, y=ntv.rich)) + geom_point() + geom_smooth(method=lm, se=FALSE) + labs(x="Island Area (hectares)", y="Native Plant Species Richness", title="Island Area Versus Native Plant Richness") + theme_classic()
 area_mod <- lm(ntv.rich ~ area, data=islands)
 summary(area_mod)
-# all_mod <-
-
+observed <- islands$ntv.rich
+predicted <- predict(area_mod)
+SSres <- sum((observed - predicted)^2)
+SStot <- sum((observed - mean(observed))^2)
+all_mod <- lm(ntv.rich ~ area + elev + dist.mnland + latitude + years.isol + years.deglac, data=islands)
+summary(all_mod)
 ```
 
 **Question 2:** Does your R² match the one in the summary? The six-predictor model has a higher R² than the area model. Does that mean it is a better model? What does the adjusted R² do differently?
 
-**Answer:**
+**Answer:** Yes, my R² matches the one in the summary, but this does not necessarliy mean it is a better model. The adjusted R² uniquely accounts for the number of predictors relative to sample size.
 
 # Comparing nested models with ANOVA
 
