@@ -5,3 +5,4 @@
 {"chunk":null,"ts":"2026-11-12T20:53:50Z","pid":12687,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘purrr’ was built under R version 4.5.2"}
 {"chunk":null,"ts":"2026-11-12T20:53:50Z","pid":12687,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘dplyr’ was built under R version 4.5.2"}
 {"chunk":null,"ts":"2026-11-12T20:53:50Z","pid":12687,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘lubridate’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-12T21:59:09Z","pid":12687,"engine":"r","severity":"error","render":false,"text":"## Error: there is no package called ‘AICcmodavg’"}

@@ -114,12 +114,14 @@ lglk_area <- as.numeric(logLik(area_mod))
 lglk_h1 <- as.numeric(logLik(h1_mod))
 lrStat <- 2*(lglk_h1 - lglk_area)
 lrStat
-
+DegFreeDiff <- attr(logLik(h1_mod), "df") - attr(logLik(area_mod), "df")
+p <- pchisq(lrStat, df=DegFreeDiff, lower.tail=FALSE)
+p
 ```
 
 **Question 4:** What do the `#Df` values (3 and 5) count? Compare the *p*-values from the LRT and the ANOVA. Do the two tests reach the same conclusion? Why are they not exactly the same?
 
-**Answer:**
+**Answer:** The `#Df` values count the estimated model parameters (3 for area_mod and 5 for h1_mod). The p-values reach the same conclusion, but are slightly different because the LRT used a chi-squared while the ANOVA used an F-distribution.
 
 # Part 4 — Information criteria {-}
 
@@ -128,11 +130,14 @@ lrStat
 Hypothesis 2 says native richness depends on the islands' history: years since deglaciation, latitude and years since isolation. Fit the hypothesis 2 model and an intercept-only (null) model. Then compare the five models you now have (null, area, hypothesis 1, hypothesis 2, all six predictors) with AIC, AICc and BIC. For the model with the lowest AICc, calculate how many times more likely it is than each of the other four.
 
 ```{r info-criteria}
-
-# h2_mod <-
-
-# null_mod <-
-
+h2_mod <- lm(ntv.rich ~ years.deglac + latitude + years.isol, data=islands)
+null_mod <- lm(ntv.rich ~ 1, data=islands)
+AICc <- function(model) {K <- attr(logLik(model), "df")
+  n <- nobs(model)
+  AIC(model) + (2 * K * (K + 1)) / (n - K - 1)}
+models <- list(null_mod, area_mod, h1_mod, h2_mod, all_mod)
+compare <- data.frame(Model = c("Null", "Area", "H1", "H2", "All"), AIC = sapply(models, AIC), AICc = sapply(models, AICc), BIC = sapply(models, BIC))
+compare
 ```
 
 **Question 5:** Which model is best by AIC, by AICc and by BIC? Using the rules of thumb (a difference under 2 means equivalent, over 6 means clearly worse), which models are equivalent to the best one by AICc and which are clearly worse? Why does AICc disagree with AIC here? Which hypothesis is best supported, and what does the hypothesis 2 model tell you on its own?
