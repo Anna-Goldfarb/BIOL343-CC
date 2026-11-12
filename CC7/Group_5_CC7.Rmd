@@ -142,7 +142,7 @@ compare
 
 **Question 5:** Which model is best by AIC, by AICc and by BIC? Using the rules of thumb (a difference under 2 means equivalent, over 6 means clearly worse), which models are equivalent to the best one by AICc and which are clearly worse? Why does AICc disagree with AIC here? Which hypothesis is best supported, and what does the hypothesis 2 model tell you on its own?
 
-**Answer:**
+**Answer:** The model all_mod is best by AIC, and the area_mod model is the best by AICc and BIC. No other models are equal to area_mod. The models null_mod, h2_mod, and all_mod are clearly worse. Unlike AIC, AICc accounts for model complexity and favours models with less predictors. Hypothesis 1 is best supported (partially, see Question 3) and the hypothesis 2 model tells that historical factors poorly explain native plant species richness.
 
 # Missing values
 
@@ -150,8 +150,14 @@ Hypothesis 1 leaves out the number of soil types, which might also affect native
 
 ```{r missing}
 
-# soil_mod <-
-
+soil_mod <- lm(ntv.rich ~ area + soil.types, data=islands)
+AIC(area_mod, soil_mod)
+nobs(area_mod)
+nobs(soil_mod)
+islands_complete <- islands[complete.cases(islands[, c("ntv.rich", "area", "soil.types")]),]
+area_mod2 <- lm(ntv.rich ~ area, data=islands_complete)
+soil_mod2 <- lm(ntv.rich ~ area + soil.types, data=islands_complete)
+AIC(area_mod2, soil_mod2)
 ```
 
 **Question 6:** Before you removed the missing values, which model looked better by AIC, and by how much? Why was that comparison wrong? After the fix, does the number of soil types improve the model? What did removing the missing values cost?
