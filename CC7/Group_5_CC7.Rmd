@@ -69,9 +69,10 @@ colSums(is.na(islands))
 Plot native richness (y) against island area (x) with a fitted straight line, axis labels and a clean theme. Fit a linear model of native richness with area as the only predictor, and print the summary. Calculate the model's R² yourself from the predicted and observed values. Then fit a second model with **all six** predictors from the hypotheses (area, elevation, distance from the mainland, latitude, years since isolation and years since deglaciation) and print its summary.
 
 ```{r r-squared, message=FALSE}
-
-# area_mod <-
-
+library(tidyverse)
+ggplot(islands, aes(x=area, y=ntv.rich)) + geom_point() + geom_smooth(method=lm, se=FALSE) + labs(x="Island Area (hectares)", y="Native Plant Species Richness", title="Island Area Versus Native Plant Richness") + theme_classic()
+area_mod <- lm(ntv.rich ~ area, data=islands)
+summary(area_mod)
 # all_mod <-
 
 ```
