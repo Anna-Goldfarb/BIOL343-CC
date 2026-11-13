@@ -182,7 +182,7 @@ abline(h=0,col="red")
 
 **Question 7:** Which variables did you transform, and what in the plots told you to? Compare the untransformed and transformed results: what changed in the fit of the models, in which model AIC, AICc and BIC choose, and in your conclusion about soil types? How long did it take to redo the whole analysis, and what would it have taken if you had done each step by hand (for example, copying numbers into a spreadsheet or typing them into your answers)?
 
-**Answer:**
+**Answer:** The six-predictor model, all_mod, had skewed residuals and the Q-Q plot curved upwards. The residuals of every model improved from transformation. It only took a few minutes to redo the whole analysis, but it would have taken much longer, possibly hours, to do it by hand.
 
 # DO THIS LAST {-}
 
