@@ -158,11 +158,12 @@ islands_complete <- islands[complete.cases(islands[, c("ntv.rich", "area", "soil
 area_mod2 <- lm(ntv.rich ~ area, data=islands_complete)
 soil_mod2 <- lm(ntv.rich ~ area + soil.types, data=islands_complete)
 AIC(area_mod2, soil_mod2)
+lrtest(area_mod2, soil_mod2)
 ```
 
 **Question 6:** Before you removed the missing values, which model looked better by AIC, and by how much? Why was that comparison wrong? After the fix, does the number of soil types improve the model? What did removing the missing values cost?
 
-**Answer:**
+**Answer:** Before removing the missing values, soil_mod looked better by AIC by 56.26 compared to area_mod. The comparison was wrong because each model was using a different number of observations. After the fix, the number of soil types significantly improves the model. Removing the missing values cost 18.2% of the observations (22 to 18) so statistical power is reduced.
 
 # Part 5 — Checking the models {-}
 
