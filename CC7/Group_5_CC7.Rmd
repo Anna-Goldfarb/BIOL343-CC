@@ -173,14 +173,11 @@ Do this on the untransformed data first: run your chunks (or render to HTML) and
 
 ```{r residuals, message=FALSE}
 hist(residuals(all_mod), main="Residuals Histogram", xlab="Residuals")
-qqnorm(residuals(all_mod))
-qqline(residuals(all_mod), col="red")
+# qqnorm(residuals(all_mod))
+# qqline(residuals(all_mod), col="red")
 plot(fitted(all_mod), residuals(all_mod), xlab="Predicted Native Plant Richness", ylab="Residuals", main="Residuals vs. Fitted Values")
 abline(h=0,col="red")
-var <- c("ntv.rich", "area", "elev", "dist.mnland", "latitude", "years.isol", "years.delac")
-par(mfrow = c(3, 3))
-for (v in var) {hist(islands[[v]], main = v, xlab = v)}
-par(mfrow = c(1, 1))
+# var <- c("ntv.rich", "area", "elev", "dist.mnland", "latitude", "years.isol", "years.delac")
 ```
 
 **Question 7:** Which variables did you transform, and what in the plots told you to? Compare the untransformed and transformed results: what changed in the fit of the models, in which model AIC, AICc and BIC choose, and in your conclusion about soil types? How long did it take to redo the whole analysis, and what would it have taken if you had done each step by hand (for example, copying numbers into a spreadsheet or typing them into your answers)?

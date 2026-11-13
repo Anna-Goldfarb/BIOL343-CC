@@ -9,3 +9,13 @@
 {"chunk":null,"ts":"2026-11-12T23:02:07Z","pid":12687,"engine":"r","severity":"warning","render":false,"warning":"## Warning: models are not all fitted to the same number of observations"}
 {"chunk":null,"ts":"2026-11-13T01:33:23Z","pid":12687,"engine":"r","severity":"error","render":false,"text":"## Error: invalid for() loop sequence"}
 {"chunk":null,"ts":"2026-11-13T01:33:33Z","pid":12687,"engine":"r","severity":"error","render":false,"text":"## Error: 'x' must be numeric"}
+{"chunk":null,"ts":"2026-11-13T19:45:51Z","pid":43029,"engine":"r","severity":"error","render":false,"text":"## Error: object 'all_mod' not found"}
+{"chunk":null,"ts":"2026-11-13T19:46:10Z","pid":43029,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘ggplot2’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-13T19:46:10Z","pid":43029,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘tibble’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-13T19:46:10Z","pid":43029,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘tidyr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-13T19:46:10Z","pid":43029,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘readr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-13T19:46:10Z","pid":43029,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘purrr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-13T19:46:10Z","pid":43029,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘dplyr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-13T19:46:11Z","pid":43029,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘lubridate’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-13T19:46:24Z","pid":43029,"engine":"r","severity":"warning","render":false,"warning":"## Warning: models are not all fitted to the same number of observations"}
+{"chunk":null,"ts":"2026-11-13T19:47:06Z","pid":43029,"engine":"r","severity":"warning","render":false,"warning":"## Warning: \u001b[1m\u001b[22mIgnoring unknown parameters: `bin`"}
