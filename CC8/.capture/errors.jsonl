@@ -1,0 +1,12 @@
+{"chunk":null,"ts":"2026-11-19T23:23:18Z","pid":67259,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘ggplot2’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-19T23:23:18Z","pid":67259,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘tibble’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-19T23:23:18Z","pid":67259,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘tidyr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-19T23:23:18Z","pid":67259,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘readr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-19T23:23:18Z","pid":67259,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘purrr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-19T23:23:18Z","pid":67259,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘dplyr’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-19T23:23:19Z","pid":67259,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘lubridate’ was built under R version 4.5.2"}
+{"chunk":null,"ts":"2026-11-19T23:23:20Z","pid":67259,"engine":"r","severity":"warning","render":false,"warning":"## Warning: cannot open file '/Users/annagoldfarb/Desktop/BIOL343/BIOL343-CC/CC8/data/mytilus.csv': No such file or directory"}
+{"chunk":null,"ts":"2026-11-19T23:23:20Z","pid":67259,"engine":"r","severity":"error","render":false,"text":"## Error: cannot open the connection"}
+{"chunk":null,"ts":"2026-11-19T23:30:13Z","pid":67259,"engine":"r","severity":"error","render":false,"text":"## Error: \u001b[1m\u001b[22mProblem while computing aesthetics.\n\u001b[36mℹ\u001b[39m Error occurred in the 1st layer.\n\u001b[1mCaused by error:\u001b[22m\n\u001b[33m!\u001b[39m object 'lap94y_freg' not found"}
+{"chunk":null,"ts":"2026-11-19T23:47:00Z","pid":67259,"engine":"r","severity":"warning","render":false,"warning":"## Warning: In lm.fit(x, y, offset = offset, singular.ok = singular.ok, ...) :\n extra argument ‘family’ will be disregarded"}
+{"chunk":null,"ts":"2026-11-19T23:47:04Z","pid":67259,"engine":"r","severity":"warning","render":false,"warning":"## Warning: In lm.fit(x, y, offset = offset, singular.ok = singular.ok, ...) :\n extra argument ‘family’ will be disregarded"}

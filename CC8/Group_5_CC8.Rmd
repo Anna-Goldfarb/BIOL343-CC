@@ -51,13 +51,15 @@ As in earlier challenges, the tasks tell you **what** to produce, not which func
 Import the data as an object called `mytilus` and check its structure. Plot the allele frequency (y) against distance (x), coloured by substrate, with axis labels, a legend title and a clean theme.
 
 ```{r import-data, message=FALSE}
-# mytilus <-
-
+library(tidyverse)
+mytilus <- read.csv("/Users/annagoldfarb/Desktop/BIOL343/BIOL343-CC/CC8/data/mytilus.csv")
+str(mytilus)
+ggplot(mytilus, aes(x= miles_east,y= lap94y_freq, colour= substrate)) + geom_point() + labs(x= "Distance East of Southport (Miles)", y= "Lap94y Allele Frequency", colour= "Substrate") + theme_classic()
 ```
 
 **Question 1:** Describe the shape of the relationship between allele frequency and distance. What values can the response take, and why does that make a linear model with normal residuals a poor choice for it?
 
-**Answer:**
+**Answer:** The shape of the relationship between allele frequency and distance is similar to a logistic model. The response can take the values 0-1 because it is a proportion, and a linear model with normal residuals is inappropriate because it can predict values outside this range and assumes constant residual variance.
 
 # Part 2 — A logistic GLM {-}
 
@@ -66,17 +68,18 @@ Import the data as an object called `mytilus` and check its structure. Plot the 
 Fit a linear model of allele frequency with distance and substrate as predictors, print the summary, and find the range of its fitted values. Then fit the same model as a generalized linear model for a proportion (binomial errors, logit link) and print the summary. Finally, refit the GLM so that it estimates the dispersion instead of assuming it, and print that summary too.
 
 ```{r glm-fit}
-# lm_mod <-
-
-# glm_mod <-
-
-# glm_mod2 <-
-
+lm_mod <- lm(lap94y_freq ~ miles_east + substrate, data=mytilus)
+summary(lm_mod)
+range(fitted(lm_mod))
+glm_mod <- lm(lap94y_freq ~ miles_east + substrate, data=mytilus, family=binomial(link="logit"))
+summary(glm_mod)
+glm_mod2 <- glm(lap94y_freq ~ miles_east + substrate, data=mytilus, family=quasibinomial(link="logit"))
+summary(glm_mod2)
 ```
 
 **Question 2:** Which predicted frequencies from the linear model are impossible? What does the warning from the binomial GLM mean? Compare the estimates and the standard errors of the two GLMs: what is the dispersion parameter of the second one, what would a value of 1 mean, and which of the two GLMs would you report?
 
-**Answer:**
+**Answer:** The maximum allele frequency from the linar model is impossible because it is greater than 1. The warning means that the binomaial model expects counts rather than proportions in the response. The dispersion parameter of glm_mod2 was 0.0525. A value of 1 would mean that the observation variation matches the assumed binomial variation. I would report glm_mod2.
 
 # Reading the coefficients
 
@@ -87,12 +90,20 @@ P = 1 / (1 + e^(−Y))
 Using the estimates from your GLM, calculate Y and the predicted frequency for a Mud population at 10 miles and at 60 miles. Then add the fitted curve for each substrate to your plot from the first task.
 
 ```{r link-scale}
-
+Y10 <- -1.892473 + 0.033230 * 10 + 0.235981
+Y60 <- -1.892473 + 0.033230 * 60 + 0.235981
+P10 <- 1 / (1 + exp(-Y10))
+P60 <- 1 / (1 + exp(-Y60))
+Y10
+P10
+Y60
+P60
+ggplot(mytilus, aes(x= miles_east, y= lap94y_freq, colour= substrate)) + geom_point() + geom_smooth(method="glm", method.args=list(family=quasibinomial(link="logit")), formula=y~x, se=FALSE) + labs(x= "Distance East of Southport (Miles)", y= "Lap94y Allele Frequency", colour= "Substrate") + theme_classic()
 ```
 
 **Question 3:** Report the two predicted frequencies. On the logit scale the distance effect is a straight line; what does the estimate for distance mean on that scale, and why does a change of 50 miles raise the predicted frequency by a different amount in the middle of the cline than at its ends?
 
-**Answer:**
+**Answer:** The predicted frequencies are 0.2101 at 10 miles and 0.5835 at 60 miles. The distance coefficient of 0.03323 means that each additional mile east increases the log-odds of the allele by 0.03323. The middle of the cline is the steepest part of the curve since it is S-shaped, while the ends are closer to 0 or 1.
 
 # Part 3 — Quality checks {-}
 
@@ -101,12 +112,23 @@ Using the estimates from your GLM, calculate Y and the predicted frequency for a
 Make the standard diagnostic plots for your GLM, including the one that shows influential points. Look back at your plot of the data and at the diagnostic plots, and identify any populations that look problematic. Find their rows, and refit the model without them so you can see how much they matter.
 
 ```{r qaqc, message=FALSE, warning=FALSE}
-
+par(mfrow = c(2, 2))
+plot(glm_mod2, which = 1:4)
+par(mfrow = c(1, 1))
+cooks <- cooks.distance(glm_mod2)
+problem_rows <- which(cooks > 4 / nrow(mytilus))
+problem_rows
+mytilus[problem_rows, ]
+mytilus_clean <- mytilus[-problem_rows, ]
+glm_clean <- glm(lap94y_freq~miles_east+substrate, data= mytilus_clean, family= quasibinomial(link = "logit"))
+summary(glm_mod2)
+summary(glm_clean)
+cbind( Original = coef(glm_mod2), Without_influential = coef(glm_clean))
 ```
 
 **Question 4:** Do the diagnostic plots show a problem with the model? If some populations look problematic, what happens to your model if you remove them? How could you deal with these problems if this was your project?
 
-**Answer:**
+**Answer:** The diagnostic plots show that some observations may disproportionally effect the model. Removing them increases the distance coefficient and makes Rock substrate effect insignificant. I would investigate these populations for measurement errors, unusual environmental conditions, and sampling differences. I would look at the models with and without observations, consider other models, and collect more data.
 
 # Part 4 — Experimental design {-}
 
@@ -115,12 +137,15 @@ Make the standard diagnostic plots for your GLM, including the one that shows in
 Summarise the distance of the populations on each substrate (number of populations, smallest, mean and largest distance). Then fit your GLM with substrate as the only predictor, print the summary, and compare its substrate estimates with those from the model that also includes distance.
 
 ```{r confounding}
-
+mytilus %>% group_by(substrate) %>% summarise(n=n(), min_distance = min(miles_east), mean_distance = mean(miles_east), max_distance = max(miles_east))
+glm_substrate <- glm(lap94y_freq~substrate, data = mytilus, family = quasibinomial(link = "logit"))
+summary(glm_substrate)
+cbind(Substrate_only = coef(glm_substrate), With_distance = coef(glm_mod2)[names(coef(glm_substrate))])
 ```
 
 **Question 5:** Why are the substrate effects so much larger when distance is left out of the model? Is this study an experiment or an observational survey, and which element of a designed experiment is missing that would let you separate the effect of substrate from the effect of place? Briefly describe an experiment that could test whether substrate itself affects 94y frequency (or survival of 94y carriers).
 
-**Answer:**
+**Answer:** The substrate effects are larger when the distance is left out because substrate type and location are confouded. This study is an observational survey because the substrate type was not randomly assigned. The missing element is randomization. To test whether substrate directly affects 94y frequency or survival, I would randomly assign mussels with known 94y genotypes to Cobble, Mud, and Rock substrates at multiple locations, using replicated experimental units. I would then compare survival and changes in allele frequency across substrates while controlling for location.
 
 # Laying out a field trial
 
@@ -128,10 +153,11 @@ A plant breeder wants to compare grain yield of hybrid and inbred corn. The tria
 
 Draw a diagram showing the experimental design. You don't have to draw out every single plant, but make sure the design is clear, and you have labelled blocks and individuals, and which individuals belong to the same seed family (hint: using shapes or colours with a legend can help here). Draw it by hand or with any drawing tool, save it as an image (e.g. `design.png`) in your project folder, and show it in this document by adding a line `![Experimental design](design.png)` below this paragraph (outside any code chunk).
 
+![Experimental design](design.png)
 
 **Question 6:** What is the replicate for the comparison of hybrid and inbred corn: a plant or a family? How many independent replicates of each line does the trial have, and what would be wrong with analysing the 40 plants as independent replicates? Why is every family planted in every block, with positions randomized within blocks, rather than (say) all hybrids in blocks 1–2 and all inbreds in blocks 3–5?
 
-**Answer:**
+**Answer:** The seed is the replicate for the comparison of hybrid and inbred corn, so the plant. There should be 2 hybrid and 2 inbred replicates, so two families for each type. Treating all 40 plants as independent replicates would cause pseudoreplication. Planting every family in all five blocks controls for environmental variation across the field. andomizing positions within each block prevents environmental biases.
 
 # DO THIS LAST {-}
 
