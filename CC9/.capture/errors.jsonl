@@ -1,0 +1,2 @@
+{"chunk":null,"ts":"2026-11-26T21:23:36Z","pid":7315,"engine":"r","severity":"error","render":false,"text":"## Error: object 'yeild' not found"}
+{"chunk":null,"ts":"2026-11-26T21:30:45Z","pid":7315,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘lme4’ was built under R version 4.5.2"}

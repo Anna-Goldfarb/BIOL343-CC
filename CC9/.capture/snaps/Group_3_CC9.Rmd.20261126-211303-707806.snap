@@ -1,0 +1,101 @@
+---
+title: "BIOL343 Coding Challenge 9: Mixed models"
+author: "Group # — names and student numbers in the chunk below"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Group Members {-}
+
+```{r group_members}
+# Name - Queen's Student Number
+
+# 1. Anna Goldfarb -
+
+```
+
+# DO THIS FIRST {-}
+
+Copy and paste these two lines into your R Console to install the current positpal, then **restart R** (*Session → Restart R*, or the restart button in the Console) before anything else. **Do not include them as a code chunk.**
+
+```
+install.packages("remotes")
+remotes::install_url("https://quantitative.bio/downloads/positpal.tar.gz", upgrade = "never")
+```
+
+After the restart, paste this line, replacing `FILENAME.Rmd` with the name you are going to use for the .R or .Rmd file you are going to upload (rename the template first, e.g. `Group_#_CC9.Rmd`, and use that exact name):
+
+```
+positpal::start("FILENAME.Rmd")
+```
+
+Before you run it: create or open an R project folder for this challenge so that it is your working directory, then save this file in that folder under the name you will upload, and check that autosave is on (*File → Auto Save*). Closing the laptop or quitting Positron does not lose your log: when you reopen the project folder, positpal picks up where you left off and says so in the Console after your first command. **Every time you open Positron to work on this file, run the `start()` line again**, even if positpal says it picked up where you left off; it continues the same log and never erases it. See OnQ and use the positpal chatbot if you are having trouble with positpal.
+
+# Part 1 — Import and inspect {-}
+
+The data file is `data/oats.csv`: the yield of oats in a split-plot field trial. The field was divided into six blocks; each block was divided into three subplots, each sown with one of three oat varieties; and each subplot was split into four strips that received four rates of nitrogen fertilizer, measured on each strip. The subplots are labelled a, b and c within each block. One row is one strip. The instructions describe the trial and the variables. **Do not edit the file by hand.**
+
+So far every model has treated each row as an independent observation. This week the rows come in groups within groups, and you will fit models that know it.
+
+As in earlier challenges, the tasks tell you **what** to produce, not which function to use. The starter lines in some chunks are commented out so that the blank template knits; remove the `#` as you fill them in.
+
+# Import and inspect the data
+
+Import the data as an object called `oats` and check its structure. Make sure each column has the right type for how you will use it. Count the strips in each combination of block and variety.
+
+```{r import-data}
+oats <- read.csv("/Users/annagoldfarb/Desktop/BIOL343/BIOL343-CC/CC9/data/oats.csv")
+str(oats)
+```
+
+**Question 1:** Which column is the response? For each of the other columns, say whether it is continuous or categorical, and whether it should be a fixed or a random effect, and why. Variety was assigned to subplots and nitrogen to strips: how many independent replicates does the trial have for comparing varieties (explain your answer)?
+
+**Answer:** The yeild column is the response. The nitrogen column is continuous and should be a fixed effect because we are interested in the amount of nitrogen impact. The varienty column is categorical and should be a fixed effect because we want compare 
+
+# Part 2 — The pseudoreplication problem {-}
+
+# Ignoring blocks and subplots
+
+Fit a linear model of yield with nitrogen and variety as predictors, using all 72 strips, and print the summary. Then make a new data frame with one row per subplot (each block × variety combination, with its mean yield), fit a linear model of mean yield against variety, and print its summary.
+
+```{r pseudoreplication}
+
+```
+
+**Question 2:** Compare the variety estimates, their standard errors and the residual degrees of freedom between the two models. Which model is pseudoreplicated for variety, and why? Which standard errors would you trust more?
+
+**Answer:**
+
+# Part 3 — A mixed model {-}
+
+# Block and subplot as random effects
+
+Fit a mixed model of yield with nitrogen and variety as fixed effects and a random intercept for each block **and** for each subplot nested within its block, and print the summary. The subplot labels a, b and c repeat in every block: subplot a in block I is not the same subplot as subplot a in block II. Calculate the share of the total variance in each of the three variance components. Then test whether variety improves the model with a likelihood ratio test, with both models fitted by maximum likelihood rather than REML (see *ML or REML?* in the instructions).
+
+```{r random-intercepts}
+
+# mix_var <-
+
+```
+
+**Question 3:** What share of the variation in yield does each variance component hold? Do the three varieties differ in yield? How do the standard errors of nitrogen and of variety compare with the two linear models in Part 2, and why?
+
+**Answer:**
+
+# DO THIS LAST {-}
+
+When your document is finished, knit it, open the `.html` in a web browser and **print it to PDF** (*File → Print → Save as PDF*; name it `Group_#_CC9.pdf`). Then copy and paste this into the R Console to stop positpal and create your coding log. **Do not include it as a code chunk.**
+
+```
+positpal::stop_capture()
+positpal::export_capture()
+```
+
+`export_capture()` prints the name and location of the `my-capture-YYYYMMDD-HHMMSS.zip` it creates beside this file. **Each group member** uploads their own `.zip` to the **"CC9 — Coding Log (individual)"** dropbox on OnQ; the group's `.Rmd`, `.html` and **`.pdf`** (OnQ shows uploaded HTML as source code, so the PDF is what gets graded; the `.html` is a back-up) go to your section's **TUT02-CC9** or **TUT03-CC9** folder. Submissions without the log are incomplete. If `export_capture()` fails, zip the `.capture` folder yourself and upload that instead.
