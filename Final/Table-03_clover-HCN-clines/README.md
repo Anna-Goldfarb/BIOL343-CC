@@ -42,6 +42,23 @@ Explore the data, then design and run the analyses you need to answer these two 
 1. Does the frequency of HCN-producing clover increase with distance from the city centre?
 2. Is the urban–rural pattern the same in all three cities, and is it better explained by distance from the city centre or by the amount of impervious surface?
 
+# Outline:
+1. Load packages and data (in presentation note hypotheses based on questions)
+2. Wrangle/clean and combine data - check for missing values and duplicates, join datasets, other analysis prep
+3. Visualize and summarize data - calculate cyanogenesis frequency per population, figure of cyanogenesis frequency vs. distance, figure of cyanogenesis frequency vs. impervious surface, visualize differences among cities, visualize correlation between environmental predictors
+4. models/statistical analysis - choose model, answer Q1, Q2A does the urban–rural pattern differ among cities, Q2B is impervious surface a better predictor, compare models using AIC
+5. model diagnostics - check residuals, check residuals against predictors, check random effects and convergence
+6. visualize model predictions - figure of predicted cyanogenesis probability vs. distance, figure predicted cyanogenesis probability vs. impervious surface, visualize AIC model comparisons
+7. Interperetations
+
+# Divisions
+1. Research questions, background and data: Import packages and datasets, inspect data structures, summarize study design and background literature.
+2. Data cleaning and wrangling: Check missing values, duplicates, recode HCN, join datasets and prepare variables.
+3. Exploratory data analysis: Calculate population frequencies, produce exploratory plots and examine predictor correlations.
+4. Statistical modelling: Question 1: Fit null and distance models, perform likelihood ratio tests, calculate odds ratios and test the city interaction.
+5. Statistical modelling: Question 2: Fit impervious surface models, compare models using AIC and examine collinearity.
+6. Model diagnostics and conclusion: Check model assumptions, generate fitted prediction figures and synthesize results and limitations.
+
 ## Background reading
 
 See `READING.md` (one paper about this study system).
